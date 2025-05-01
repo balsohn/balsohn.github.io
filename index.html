@@ -1,0 +1,691 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>손지호 | 백엔드 개발자 포트폴리오</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="새로운 도전을 두려워하지 않는 백엔드 개발자 손지호의 포트폴리오입니다." />
+  <meta name="keywords" content="Java, Spring, 백엔드, 개발자, 포트폴리오" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- 외부 CSS 파일 연결 -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!-- Navigation -->
+<div class="nav-container">
+  <div class="container">
+    <nav class="navbar">
+      <a href="#home" class="nav-logo">Son Jiho</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#strengths">Strengths</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-subtitle">안녕하세요 👋</div>
+      <h1 class="hero-title">새로운 도전을 즐기는<br>백엔드 개발자 손지호입니다</h1>
+      <p class="hero-description">
+        다양한 경험 속에서 발견한 프로그래밍의 매력에 빠져, 복잡한 문제를 해결하며 성장하는 것을 즐깁니다.
+        사용자에게 가치를 제공하는 안정적이고 효율적인 백엔드 시스템 구축을 목표로 끊임없이 배우고 탐구합니다.
+      </p>
+      <a href="#contact" class="hero-cta">Contact Me</a>
+    </div>
+    <div class="hero-image">
+      <!-- TODO: 실제 프로필 이미지 경로로 변경해주세요 -->
+      <img src="img/img.jpg" alt="손지호 프로필 이미지">
+    </div>
+  </div>
+</section>
+
+<!-- About Section (수정됨) -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-content">
+        <h3>문제 해결에 즐거움을 느끼는 개발자</h3>
+        <p>
+          어릴적부터 컴퓨터 게임을 좋아하여 자연스럽게 컴퓨터 언어에 관심을 가지게 되었고, 코드를 통해 문제를 해결하고 새로운 것을 창조하는 과정에서 큰 매력을 느껴 개발자의 길을 걷게 되었습니다.
+        </p>
+        <p>
+          코드의 가독성과 재사용성을 높여 유지보수하기 좋은 코드를 작성하는 것을 중요하게 생각하며, 동료와의 적극적인 소통과 코드 리뷰를 통해 함께 성장하는 것을 즐깁니다.
+        </p>
+      </div>
+      <div class="about-info">
+        <table class="info-table">
+          <tr>
+            <th><i class="fas fa-user" style="margin-right: 5px;"></i> 이름</th>
+            <td>손지호</td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-calendar-alt" style="margin-right: 5px;"></i> 생년월일</th>
+            <td>1990.07.31</td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-map-marker-alt" style="margin-right: 5px;"></i> 주소지</th>
+            <td>경기도 파주시</td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-envelope" style="margin-right: 5px;"></i> 이메일</th>
+            <td><a href="mailto:balsohn@gmail.com">balsohn@gmail.com</a></td>
+          </tr>
+          <tr>
+            <th><i class="fas fa-phone" style="margin-right: 5px;"></i> 연락처</th>
+            <td><a href="tel:010-4258-0562">010-4258-0562</a></td>
+          </tr>
+          <!--<tr>
+            <th><i class="fas fa-graduation-cap" style="margin-right: 5px;"></i> 학력</th>
+            <!– TODO: [최종 학력 또는 관련 교육 과정 정보를 입력해주세요. 예: OO대학교 OO학과 졸업, XX 부트캠프 백엔드 과정 수료 (YYYY.MM - YYYY.MM)] –>
+            <td>(학력/교육 정보 입력)</td>
+          </tr>-->
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section (Flexbox 적용) -->
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-title">
+      <h2>Technical Skills</h2>
+    </div>
+    <div class="skills-container">
+      <div class="skill-category">
+        <h3>Backend</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Java</span>
+            <span>Proficient</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Spring Framework / Boot</span>
+            <span>Proficient</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>MyBatis</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>JSP / Servlet</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill-description">
+          <i class="fas fa-check check-icon"></i>객체지향 프로그래밍(OOP) 원칙 이해 및 적용<br>
+          <i class="fas fa-check check-icon"></i>Spring MVC/Boot 기반 웹 애플리케이션 개발<br>
+          <i class="fas fa-check check-icon"></i>Spring Security 활용 인증/인가 구현 경험<br>
+          <i class="fas fa-check check-icon"></i>MyBatis 활용 CRUD 및 동적 쿼리 작성<br>
+          <i class="fas fa-check check-icon"></i>JSP/Servlet 기반 MVC 패턴 웹 개발 경험
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Database</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>MySQL</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>MariaDB</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill-description">
+          <i class="fas fa-check check-icon"></i>관계형 데이터베이스 설계 및 정규화<br>
+          <i class="fas fa-check check-icon"></i>SQL 쿼리 작성 및 최적화 경험<br>
+          <i class="fas fa-check check-icon"></i>인덱스 활용 및 기본적 성능 튜닝
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Frontend</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>HTML5 / CSS3</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>JavaScript (ES6+)</span>
+            <span>Intermediate</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 65%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>jQuery</span>
+            <span>Intermediate</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Ajax</span>
+            <span>Intermediate</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 65%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>React.js</span>
+            <span>Basic</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 40%"></div>
+          </div>
+        </div>
+        <div class="skill-description">
+          <i class="fas fa-check check-icon"></i>웹 표준 기반 시맨틱 마크업<br>
+          <i class="fas fa-check check-icon"></i>CSS 활용 레이아웃 및 반응형 디자인 구현<br>
+          <i class="fas fa-check check-icon"></i>JavaScript DOM 조작 및 이벤트 처리<br>
+          <i class="fas fa-check check-icon"></i>Ajax 활용 비동기 통신 구현 경험<br>
+          <i class="fas fa-check check-icon"></i>React 기본 개념 및 컴포넌트 활용 학습
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>DevOps & Tools</h3>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Git / GitHub</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Eclipse</span>
+            <span>Proficient</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>IntelliJ IDEA</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">
+            <span>Apache Tomcat</span>
+            <span>Experienced</span>
+          </div>
+          <div class="skill-level">
+            <div class="skill-level-fill" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill-description">
+          <i class="fas fa-check check-icon"></i>Git 활용 버전 관리 및 협업 (Branch, Merge 등)<br>
+          <i class="fas fa-check check-icon"></i>IDE 활용 개발 및 디버깅<br>
+          <i class="fas fa-check check-icon"></i>WAS 서버 설정 및 애플리케이션 배포 경험
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section (순서 변경됨) -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-title">
+      <h2>Projects</h2>
+    </div>
+    <div class="projects-container">
+
+      <!-- Project 5: 쉐이크쉑 키오스크 -->
+      <div class="project-card">
+        <div class="project-image">
+          <!-- TODO: 실제 프로젝트 이미지 경로로 변경해주세요 -->
+          <img src="img/kiosk-project.jpg" alt="쉐이크쉑 키오스크">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">쉐이크쉑 키오스크</h3>
+          <p class="project-subtitle">객체지향 설계를 적용한 콘솔 기반 키오스크 시스템</p>
+
+          <div class="project-meta">
+            <div>
+              <p><strong>⏱️ 기간:</strong> 2025.04.24 - 2025.05.01</p>
+              <p><strong>👥 역할:</strong> 개인 프로젝트 (기획, 설계, 개발)</p>
+            </div>
+            <div>
+              <p><strong>💻 기술:</strong> Java, OOP</p>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>주요 기능</h4>
+            <ul>
+              <li>메뉴 카테고리 및 상품 관리 (계층 구조)</li>
+              <li>장바구니 기능 (추가, 수량 변경, 삭제, 총액 계산)</li>
+              <li>주문 처리 및 완료, 대기 번호 발급</li>
+            </ul>
+          </div>
+
+          <div class="project-features">
+            <h4>배운 점 및 기술적 도전</h4>
+            <ul>
+              <li>객체지향 원칙(캡슐화, 추상화, 다형성) 적용 심화</li>
+              <li>클래스 분리를 통한 코드 응집도 및 유지보수성 향상 경험</li>
+              <li>사용자 입력 처리 및 기본적인 예외 처리 구현</li>
+              <li>장바구니 수량 변경 로직 구현 시 상태 관리가 복잡했으나, 관련 로직을 별도 메서드로 분리하여 해결했습니다.</li>
+            </ul>
+          </div>
+
+          <a href="https://github.com/balsohn/Kiosk" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: 자바 계산기 프로젝트 -->
+      <div class="project-card">
+        <div class="project-image">
+          <!-- TODO: 실제 프로젝트 이미지 경로로 변경해주세요 -->
+          <img src="img/calculator-project.jpg" alt="자바 계산기 프로젝트">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">자바 계산기 프로젝트</h3>
+          <p class="project-subtitle">자바 고급 기능을 활용한 다기능 콘솔 계산기</p>
+
+          <div class="project-meta">
+            <div>
+              <p><strong>⏱️ 기간:</strong> 2025.04.16 - 2025.04.23</p>
+              <p><strong>👥 역할:</strong> 개인 프로젝트 (기획, 설계, 개발)</p>
+            </div>
+            <div>
+              <p><strong>💻 기술:</strong> Java, Generics, Enum, Lambda, Stream API</p>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>주요 기능 및 학습</h4>
+            <ul>
+              <li>제네릭(Generics)을 활용한 다양한 숫자 타입 지원</li>
+              <li>Enum을 이용한 연산자 타입 관리 및 확장성 확보</li>
+              <li>람다(Lambda)와 스트림(Stream) API를 활용한 결과 필터링</li>
+              <li>자바 컬렉션 프레임워크 활용</li>
+            </ul>
+          </div>
+
+          <div class="project-features">
+            <h4>배운 점 및 기술적 도전</h4>
+            <ul>
+              <li>객체지향 설계 원칙(캡슐화, 다형성) 적용 연습</li>
+              <li>자바 제네릭, Enum, 람다 등 고급 문법 활용 능력 향상</li>
+              <li>초기 설계 시 연산자 확장이 어려웠으나, Enum과 인터페이스를 활용하여 개선했습니다.</li>
+            </ul>
+          </div>
+
+          <a href="https://github.com/balsohn/Calculator" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </div>
+
+      <!-- 포트폴리오 프로젝트 설명 - 통합 병원 관리 시스템 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="img/hospital-project.jpg" alt="통합 병원 관리 시스템">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">통합 병원 관리 시스템</h3>
+          <p class="project-subtitle">환자 예약부터 진료 관리까지 가능한 웹 기반 시스템</p>
+
+          <div class="project-meta">
+            <div>
+              <p><strong>⏱️ 기간:</strong> 2024.08 - 2024.10</p>
+              <p><strong>👥 역할:</strong> 풀스택 개발 (팀 프로젝트, Backend 주력)</p>
+            </div>
+            <div>
+              <p><strong>💻 기술:</strong> Java, Spring Boot, MyBatis, MariaDB, JSP, JavaScript, HTML/CSS, SiteMesh</p>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>주요 역할 및 기여</h4>
+            <ul>
+              <li>Spring Boot 기반 백엔드 개발 환경 설정 및 주요 로직 개발 주도</li>
+              <li>의사별 스케줄 기반 실시간 예약 가능 시간 조회 및 처리 로직 설계/구현</li>
+              <li>권한 기반 사용자 관리 시스템 (환자/의사/관리자) 구현</li>
+              <li>진료 내역 관리 및 기록 시스템 개발</li>
+              <li>팀 협업 (Git 버전 관리, 코드 리뷰 참여)</li>
+            </ul>
+          </div>
+
+          <div class="project-features">
+            <h4>배운 점 및 기술적 도전</h4>
+            <ul>
+              <li>Spring Boot 프레임워크 실무 적용 능력 향상</li>
+              <li>복잡한 비즈니스 로직(예약 스케줄링) 설계 및 구현 경험</li>
+              <li>LocalDate, LocalTime을 활용한 날짜/시간 처리 및 스케줄 관리</li>
+              <li>SiteMesh를 활용한 레이아웃 관리 및 일관된 UI 유지</li>
+              <li>MyBatis를 활용한 복잡한 조인 쿼리 작성 및 데이터 처리</li>
+            </ul>
+          </div>
+
+          <a href="https://github.com/jiinyoo/hospital" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </div>
+
+      <!-- 포트폴리오 프로젝트 설명 - 이커머스 플랫폼 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="img/shop-project.jpg" alt="이커머스 플랫폼">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">이커머스 플랫폼</h3>
+          <p class="project-subtitle">상품 관리, 주문 처리, 회원 활동 기능을 갖춘 이커머스 웹 플랫폼</p>
+
+          <div class="project-meta">
+            <div>
+              <p><strong>⏱️ 기간:</strong> 2024.08 - 2024.10</p>
+              <p><strong>👥 역할:</strong> 백엔드 개발</p>
+            </div>
+            <div>
+              <p><strong>💻 기술:</strong> Java, Spring Boot, MyBatis, MariaDB, JSP, JavaScript, HTML/CSS, Spring Scheduler, SiteMesh</p>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>주요 기능</h4>
+            <ul>
+              <li>계층형 카테고리 관리 시스템 (대/중/소 분류)</li>
+              <li>상품 관리(CRUD) 및 주문 처리 시스템</li>
+              <li>회원 활동 기반 시스템 (찜하기, 장바구니, 리뷰)</li>
+              <li>타임세일 상품 관리 및 스케줄링</li>
+              <li>비로그인 사용자를 위한 쿠키 기반 장바구니</li>
+            </ul>
+          </div>
+
+          <div class="project-features">
+            <h4>기술적 성과 및 학습</h4>
+            <ul>
+              <li>계층형 카테고리 DB 구조 설계 및 조회 로직 최적화</li>
+              <li>쿠키와 세션을 활용한 장바구니 기능 구현</li>
+              <li>스케줄링을 활용한 타임세일 상품 자동 관리</li>
+              <li>MyBatis를 활용한 동적 쿼리 작성 및 DB 트랜잭션 관리</li>
+              <li>SiteMesh를 활용한 효율적인 화면 구성 및 일관된 UI 유지</li>
+            </ul>
+          </div>
+
+          <a href="https://github.com/balsohn/shop" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </div>
+
+      <!-- 포트폴리오 프로젝트 설명 - 펜션 예약 관리 시스템 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="img/pension-project.jpg" alt="펜션 예약 관리 시스템">
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">펜션 예약 관리 시스템</h3>
+          <p class="project-subtitle">객실 예약, 관광 정보 공유 기능을 갖춘 웹 시스템</p>
+
+          <div class="project-meta">
+            <div>
+              <p><strong>⏱️ 기간:</strong> 2023.07 - 2023.08</p>
+              <p><strong>👥 역할:</strong> 풀스택 개발 (개인 프로젝트)</p>
+            </div>
+            <div>
+              <p><strong>💻 기술:</strong> Java, Spring MVC, MyBatis, MySQL, JSP, JavaScript, HTML/CSS, Apache Tomcat, JavaMail API</p>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>주요 기능 및 역할</h4>
+            <ul>
+              <li>객실 예약 시스템 구현 (날짜 기반 객실 가용성 확인)</li>
+              <li>회원 관리 기능 (로그인, 회원가입, 정보 수정)</li>
+              <li>JavaMail API 활용 이메일 인증 기능 구현</li>
+              <li>관광 정보 및 커뮤니티 게시판 CRUD</li>
+              <li>파일 업로드 기능 구현</li>
+            </ul>
+          </div>
+
+          <div class="project-features">
+            <h4>배운 점 및 기술적 도전</h4>
+            <ul>
+              <li>Spring MVC 프레임워크 기반 웹 애플리케이션 개발 경험</li>
+              <li>MyBatis를 활용한 데이터 접근 계층 구현</li>
+              <li>복잡한 날짜 비교 로직 구현 (예약 가능 여부 판단)</li>
+              <li>JSP와 JSTL을 활용한 동적 화면 구현</li>
+            </ul>
+          </div>
+
+          <a href="https://github.com/balsohn/pension" class="project-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub Repository
+          </a>
+        </div>
+      </div>
+
+    </div> <!-- .projects-container 닫힘 -->
+  </div> <!-- .container 닫힘 -->
+</section> <!-- #projects 닫힘 -->
+
+
+<!-- Strengths Section (수정됨) -->
+<section class="strengths" id="strengths">
+  <div class="container">
+    <div class="section-title">
+      <h2>Strengths & Goals</h2>
+    </div>
+    <div class="strengths-container">
+      <div class="strength-card">
+        <div class="strength-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3 class="strength-title">탐구하는 자세와 문제 해결</h3>
+        <p>단순 구현을 넘어 코드의 동작 원리를 파악하고 개선하려 노력합니다. 문제 발생 시 근본 원인을 분석하고 효율적인 해결책을 찾는 과정을 즐깁니다.</p>
+        <span class="emphasis">Spring AOP 동작 방식을 학습하여 반복적인 로깅 코드를 개선한 경험이 있습니다.</span>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <h3 class="strength-title">빠른 학습과 성장 의지</h3>
+        <p>새로운 기술과 트렌드에 대한 호기심이 많으며, 적극적으로 학습하고 실제 프로젝트에 적용해 보는 것을 좋아합니다. 꾸준한 자기계발을 통해 성장하는 개발자가 되고자 합니다.</p>
+        <span class="emphasis">Docker 기초를 스터디하고 개인 프로젝트에 적용하여 배포 환경 이해도를 높였습니다.</span>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="strength-title">소통과 협업</h3>
+        <p>명확한 의사소통과 적극적인 피드백을 중요하게 생각합니다. Git 기반의 협업 경험을 통해 버전 관리 및 코드 리뷰의 중요성을 이해하고 실천합니다.</p>
+        <span class="emphasis">병원 관리 시스템 팀 프로젝트 시 Git-flow 전략을 준수하고 코드 리뷰에 적극 참여하여 효율적인 협업을 경험했습니다.</span>
+      </div>
+
+      <div class="strength-card">
+        <div class="strength-icon">
+          <i class="fas fa-bullseye"></i>
+        </div>
+        <h3 class="strength-title">Career Goal</h3>
+        <p>안정적이고 확장 가능한 시스템 설계 역량을 키우고 싶습니다. 특히 대용량 트래픽 처리 및 분산 시스템 분야에 대한 깊이 있는 학습을 통해 전문성을 갖춘 백엔드 개발자로 성장하는 것이 목표입니다.</p>
+        <span class="emphasis">단기적으로 MSA 환경에서의 Spring Cloud 기술 스택과 Kafka 활용 능력 향상을 목표로 학습하고 있습니다.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-container">
+      <div class="contact-form">
+        <h3>메시지 보내기</h3>
+        <!-- Formspree 엔드포인트 확인됨 -->
+        <form action="https://formspree.io/f/mblodepe" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+        <!-- <p class="form-notice">
+          * 메시지 전송 기능은 Formspree 서비스 연동이 필요합니다.
+        </p> -->
+      </div>
+      <div class="contact-info">
+        <h3>연락 정보</h3>
+        <!-- 기존 이메일, 전화번호, GitHub 정보 -->
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-content">
+            <h4>Email</h4>
+            <p><a href="mailto:balsohn@gmail.com">balsohn@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info-content">
+            <h4>Phone</h4>
+            <p><a href="tel:010-4258-0562">010-4258-0562</a></p>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="info-content">
+            <h4>GitHub</h4>
+            <p><a href="https://github.com/balsohn" target="_blank" rel="noopener noreferrer">https://github.com/balsohn/</a></p>
+          </div>
+        </div>
+
+        <!-- Tistory 블로그 링크 추가 -->
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-blog"></i>
+          </div>
+          <div class="info-content">
+            <h4>Blog</h4>
+            <p><a href="https://balsohn.tistory.com/" target="_blank" rel="noopener noreferrer">https://balsohn.tistory.com/</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-content">
+            <h4>Location</h4>
+            <p>Paju-si, Gyeonggi-do, South Korea</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">Son Jiho | Backend Developer</div>
+      <div class="social-links">
+        <a href="https://github.com/balsohn" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+          <i class="fab fa-github"></i>
+        </a>
+        <!-- 다른 소셜 링크 필요시 추가 -->
+        <a href="https://balsohn.tistory.com/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Tistory Blog">
+          <i class="fas fa-blog"></i>
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2024 Son Jiho. All rights reserved.
+      <!-- TODO: 다양한 기기에서 레이아웃이 잘 보이는지 확인해주세요. -->
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="js/main.js"></script>
+</body>
+</html>
