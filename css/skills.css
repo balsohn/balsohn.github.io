@@ -1,0 +1,150 @@
+/* Skills Section Styles */
+.skills-compact {
+    background-color: var(--light);
+  }
+  
+  .skills-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .skill-group {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+  }
+  
+  .skill-group:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary);
+  }
+  
+  .skill-group h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+  }
+  
+  .skill-icon {
+    color: var(--primary);
+    margin-right: 0.75rem;
+    font-size: 1.1em;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-tag {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+    cursor: default;
+    transition: var(--transition);
+    background-color: var(--light-gray);
+    color: var(--dark);
+    border: 1px solid transparent;
+  }
+  
+  /* Skill Level Tags */
+  .skill-tag.level-proficient {
+    background-color: rgba(67, 97, 238, 0.15);
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  .skill-tag.level-experienced {
+    background-color: rgba(72, 149, 239, 0.15);
+    color: var(--primary-light);
+  }
+  
+  .skill-tag.level-intermediate {
+    background-color: rgba(108, 117, 125, 0.15);
+    color: var(--gray);
+  }
+  
+  .skill-tag.level-basic {
+    background-color: var(--light-gray);
+    color: var(--gray);
+    font-style: italic;
+  }
+  
+  .skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-group-summary {
+    font-size: 0.9rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+  
+  /* Skills Legend */
+  .skill-legend {
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+  
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 0.75rem;
+  }
+  
+  .legend-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .legend-color.level-proficient {
+    background-color: rgba(67, 97, 238, 0.8);
+  }
+  
+  .legend-color.level-experienced {
+    background-color: rgba(72, 149, 239, 0.8);
+  }
+  
+  .legend-color.level-intermediate {
+    background-color: rgba(108, 117, 125, 0.8);
+  }
+  
+  .legend-color.level-basic {
+    background-color: #ced4da;
+  }
+  
+  /* Responsive Skills Section */
+  @media (min-width: 1100px) {
+    .skills-grid-compact {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skills-grid-compact {
+      grid-template-columns: 1fr;
+    }
+  }
