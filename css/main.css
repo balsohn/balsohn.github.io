@@ -389,160 +389,394 @@ section {
   vertical-align: middle;
 }
 
-/* Projects Section */
-.projects {
-  background-color: white;
+/* 아코디언 스타일 */
+  .projects-accordion {
+    margin-top: 2rem;
+  }
+  
+  .accordion-item {
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .accordion-item:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-5px);
+  }
+  
+  .accordion-item.active {
+    border-left: 4px solid var(--primary) !important;
+  }
+  
+  .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background-color: var(--light-gray) !important;
+  }
+  
+  .accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+  }
+  
+  .accordion-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion-item:hover .accordion-icon {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.2);
+  }
+  
+  .title-content h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--dark);
+    transition: color 0.3s ease;
+  }
+  
+  .accordion-item.active {
+    border-left: 4px solid var(--primary) !important;
+  }
+  
+  .title-content p {
+    margin: 0.3rem 0 0.6rem;
+    font-size: 0.9rem;
+    color: var(--gray);
+  }
+  
+  /* 기술 태그 스타일 */
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .project-tech span {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+    color: var(--primary);
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .accordion-item:hover .project-tech span {
+    background-color: rgba(var(--primary-rgb), 0.1);
+  }
+  
+  /* 토글 버튼 스타일 */
+  .accordion-toggle {
+    background: none;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background-color: var(--light-gray);
+    position: relative;
+  }
+  
+  .toggle-icon {
+    position: relative;
+    width: 14px;
+    height: 2px;
+    background-color: transparent;
+  }
+  
+  .toggle-icon::before,
+  .toggle-icon::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background-color: var(--dark) !important;
+    transition: all 0.3s ease;
+    left: 0;
+  }
+  
+  .toggle-icon::before {
+    transform: rotate(90deg);
+  }
+  
+  .accordion-item.active .toggle-icon::before {
+    transform: rotate(0);
+  }
+  
+  .accordion-item:hover .accordion-toggle {
+    background-color: var(--primary) !important;
+  }
+
+  .accordion-item:hover .title-content h3 {
+    color: var(--dark) !important;
+  }
+  
+  .accordion-item:hover .toggle-icon::before,
+  .accordion-item:hover .toggle-icon::after {
+    background-color: white !important;
+  }
+
+  /* 프로젝트 날짜 스타일 */
+  .project-date {
+    font-size: 0.7em;
+    color: var(--gray);
+    font-weight: normal;
+    margin-left: 0.5rem;
+  }
+  
+  /* 아코디언 내용 */
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    background-color: white;
+  }
+  
+  .accordion-item.active .accordion-content {
+    max-height: 2000px;
+    transition: max-height 1s ease-in-out;
+  }
+  
+  .project-card {
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 1px solid var(--light-gray);
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-meta {
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-meta p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--gray);
+  }
+  
+  .project-features {
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-features h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+  }
+  
+  .project-features h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+  }
+  
+  .project-features ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .project-features li {
+    margin-bottom: 0.6rem;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .project-features li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--dark) !important;
+    font-size: 0.9em;
+  }
+  
+  .project-link {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: var(--border-radius);
+    background-color: var(--primary);
+    color: white;
+    font-weight: 500;
+    transition: var(--transition);
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .project-link i {
+    margin-right: 0.5rem;
+  }
+  
+  .project-link:hover {
+    background-color: var(--secondary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.3);
+  }
+  
+  /* 반응형 처리 */
+  @media (max-width: 768px) {
+    .accordion-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    
+    .accordion-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .title-content {
+      width: 100%;
+    }
+  }
+
+/* Blog Section - 모던 타임라인 스타일 */
+.blog {
+  background-color: var(--light);
 }
 
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
+.blog-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
 }
 
-.project-card {
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
-  transition: var(--transition);
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
-}
-
-.project-image {
-  height: 250px;
-  overflow: hidden;
+.blog-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
+  padding-left: 2rem;
 }
 
-.project-image::after {
+.blog-timeline::before {
   content: '';
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.3));
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  width: 2px;
+  background-color: var(--light-gray);
 }
 
-.project-card:hover .project-image::after {
-  opacity: 1;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.project-card:hover .project-image img {
-  transform: scale(1.05);
-}
-
-.project-content {
-  padding: 1.5rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-title {
-  margin-bottom: 0.5rem;
-  font-size: 1.4rem;
-}
-
-.project-subtitle {
-  color: var(--gray);
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
-
-.project-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 0.5rem 1rem;
-  margin-bottom: 1.2rem;
-  border-top: 1px solid var(--light-gray);
-  padding-top: 1rem;
-}
-
-.project-meta p {
-  margin-bottom: 0.3rem;
-  font-size: 0.85rem;
-  color: var(--gray);
-}
-
-.project-meta p strong {
-  color: var(--dark);
-  margin-right: 0.3rem;
-}
-
-.project-meta p a {
-  word-break: break-all;
-}
-
-.project-features {
-  margin-bottom: 1.5rem;
-}
-
-.project-features h4 {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-  color: var(--secondary);
-}
-
-.project-features ul {
-  list-style: none;
-  margin-bottom: 1rem;
-  padding-left: 0;
-}
-
-.project-features li {
-  margin-bottom: 0.6rem;
+.timeline-item {
   position: relative;
-  padding-left: 1.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
 }
 
-.project-features li::before {
-  content: '\f00c';
-  font-family: 'Font Awesome 6 Free';
-  font-weight: 900;
+.timeline-item::before {
+  content: '';
   position: absolute;
-  left: 0;
-  top: 4px;
-  color: var(--primary);
-  font-size: 0.9em;
+  left: -2rem;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
+  z-index: 1;
 }
 
-.project-link {
-  display: inline-block;
-  margin-top: auto;
-  padding: 0.6rem 1.2rem;
+.timeline-date {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 1.5rem;
   border-radius: var(--border-radius);
-  background-color: var(--primary);
-  color: white;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: var(--dark);
+}
+
+.timeline-excerpt {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
   font-weight: 500;
   transition: var(--transition);
+}
+
+.timeline-link i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content:hover .timeline-link i {
+  transform: translateX(3px);
+}
+
+.blog-cta {
   text-align: center;
-  align-self: flex-start;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
 }
 
-.project-link i {
-  margin-right: 0.5rem;
-}
-
-.project-link:hover {
-  background-color: var(--secondary);
-  color: white;
-  transform: translateY(-2px);
+@media (max-width: 768px) {
+  .blog-timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item::before {
+    left: -1.5rem;
+  }
 }
 
 /* Strengths Section */

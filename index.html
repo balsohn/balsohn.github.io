@@ -39,6 +39,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#strengths">Strengths</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -306,239 +307,343 @@
     <div class="section-title">
       <h2>Projects</h2>
     </div>
-    <div class="projects-container">
+    <div class="projects-accordion">
 
-      <!-- Project 5: 쉐이크쉑 키오스크 -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/kiosk-project.jpg" alt="쉐이크쉑 키오스크">
+      <!-- Project 1: 쉐이크쉑 키오스크 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <img src="img/kiosk-project.jpg" alt="쉐이크쉑 키오스크" class="accordion-icon">
+            <div class="title-content">
+              <h3>쉐이크쉑 키오스크 <span class="project-date">(2025.04-05)</span></h3>
+              <p>객체지향 설계를 적용한 콘솔 기반 키오스크 시스템</p>
+              <div class="project-tech">
+                <span>Java</span>
+                <span>OOP</span>
+              </div>
+            </div>
+          </div>
+          <button class="accordion-toggle">
+            <span class="toggle-icon"></span>
+          </button>
         </div>
-        <div class="project-content">
-          <h3 class="project-title">쉐이크쉑 키오스크</h3>
-          <p class="project-subtitle">객체지향 설계를 적용한 콘솔 기반 키오스크 시스템</p>
+        <div class="accordion-content">
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <div>
+                  <p><strong>⏱️ 기간:</strong> 2025.04.24 - 2025.05.01</p>
+                  <p><strong>👥 역할:</strong> 개인 프로젝트 (기획, 설계, 개발)</p>
+                </div>
+                <div>
+                  <p><strong>💻 기술:</strong> Java, OOP</p>
+                </div>
+              </div>
 
-          <div class="project-meta">
-            <div>
-              <p><strong>⏱️ 기간:</strong> 2025.04.24 - 2025.05.01</p>
-              <p><strong>👥 역할:</strong> 개인 프로젝트 (기획, 설계, 개발)</p>
-            </div>
-            <div>
-              <p><strong>💻 기술:</strong> Java, OOP</p>
-            </div>
-          </div>
+              <div class="project-features">
+                <h4>주요 기능</h4>
+                <ul>
+                  <li>메뉴 카테고리 및 상품 관리 (계층 구조)</li>
+                  <li>장바구니 기능 (추가, 수량 변경, 삭제, 총액 계산)</li>
+                  <li>주문 처리 및 완료, 대기 번호 발급</li>
+                </ul>
+              </div>
 
-          <div class="project-features">
-            <h4>주요 기능</h4>
-            <ul>
-              <li>메뉴 카테고리 및 상품 관리 (계층 구조)</li>
-              <li>장바구니 기능 (추가, 수량 변경, 삭제, 총액 계산)</li>
-              <li>주문 처리 및 완료, 대기 번호 발급</li>
-            </ul>
-          </div>
+              <div class="project-features">
+                <h4>배운 점 및 기술적 도전</h4>
+                <ul>
+                  <li>객체지향 원칙(캡슐화, 추상화, 다형성) 적용 심화</li>
+                  <li>클래스 분리를 통한 코드 응집도 및 유지보수성 향상 경험</li>
+                  <li>사용자 입력 처리 및 기본적인 예외 처리 구현</li>
+                  <li>장바구니 수량 변경 로직 구현 시 상태 관리가 복잡했으나, 관련 로직을 별도 메서드로 분리하여 해결했습니다.</li>
+                </ul>
+              </div>
 
-          <div class="project-features">
-            <h4>배운 점 및 기술적 도전</h4>
-            <ul>
-              <li>객체지향 원칙(캡슐화, 추상화, 다형성) 적용 심화</li>
-              <li>클래스 분리를 통한 코드 응집도 및 유지보수성 향상 경험</li>
-              <li>사용자 입력 처리 및 기본적인 예외 처리 구현</li>
-              <li>장바구니 수량 변경 로직 구현 시 상태 관리가 복잡했으나, 관련 로직을 별도 메서드로 분리하여 해결했습니다.</li>
-            </ul>
-          </div>
-
-          <a href="https://github.com/balsohn/Kiosk" class="project-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> GitHub Repository
-          </a>
-        </div>
-      </div>
-
-      <!-- Project 4: 자바 계산기 프로젝트 -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/calculator-project.jpg" alt="자바 계산기 프로젝트">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">자바 계산기 프로젝트</h3>
-          <p class="project-subtitle">자바 고급 기능을 활용한 다기능 콘솔 계산기</p>
-
-          <div class="project-meta">
-            <div>
-              <p><strong>⏱️ 기간:</strong> 2025.04.16 - 2025.04.23</p>
-              <p><strong>👥 역할:</strong> 개인 프로젝트 (기획, 설계, 개발)</p>
-            </div>
-            <div>
-              <p><strong>💻 기술:</strong> Java, Generics, Enum, Lambda, Stream API</p>
+              <a href="https://github.com/balsohn/Kiosk" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub Repository
+              </a>
             </div>
           </div>
-
-          <div class="project-features">
-            <h4>주요 기능 및 학습</h4>
-            <ul>
-              <li>제네릭(Generics)을 활용한 다양한 숫자 타입 지원</li>
-              <li>Enum을 이용한 연산자 타입 관리 및 확장성 확보</li>
-              <li>람다(Lambda)와 스트림(Stream) API를 활용한 결과 필터링</li>
-              <li>자바 컬렉션 프레임워크 활용</li>
-            </ul>
-          </div>
-
-          <div class="project-features">
-            <h4>배운 점 및 기술적 도전</h4>
-            <ul>
-              <li>객체지향 설계 원칙(캡슐화, 다형성) 적용 연습</li>
-              <li>자바 제네릭, Enum, 람다 등 고급 문법 활용 능력 향상</li>
-              <li>초기 설계 시 연산자 확장이 어려웠으나, Enum과 인터페이스를 활용하여 개선했습니다.</li>
-            </ul>
-          </div>
-
-          <a href="https://github.com/balsohn/Calculator" class="project-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> GitHub Repository
-          </a>
         </div>
       </div>
 
-      <!-- 포트폴리오 프로젝트 설명 - 통합 병원 관리 시스템 -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/hospital-project.jpg" alt="통합 병원 관리 시스템">
+      <!-- Project 2: 자바 계산기 프로젝트 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <img src="img/calculator-project.jpg" alt="자바 계산기 프로젝트" class="accordion-icon">
+            <div class="title-content">
+              <h3>자바 계산기 프로젝트 <span class="project-date">(2025.04)</span></h3>
+              <p>자바 고급 기능을 활용한 다기능 콘솔 계산기</p>
+              <div class="project-tech">
+                <span>Java</span>
+                <span>Generics</span>
+                <span>Lambda</span>
+                <span>Stream API</span>
+              </div>
+            </div>
+          </div>
+          <button class="accordion-toggle">
+            <span class="toggle-icon"></span>
+          </button>
         </div>
-        <div class="project-content">
-          <h3 class="project-title">통합 병원 관리 시스템</h3>
-          <p class="project-subtitle">환자 예약부터 진료 관리까지 가능한 웹 기반 시스템</p>
+        <div class="accordion-content">
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <div>
+                  <p><strong>⏱️ 기간:</strong> 2025.04.16 - 2025.04.23</p>
+                  <p><strong>👥 역할:</strong> 개인 프로젝트 (기획, 설계, 개발)</p>
+                </div>
+                <div>
+                  <p><strong>💻 기술:</strong> Java, Generics, Enum, Lambda, Stream API</p>
+                </div>
+              </div>
 
-          <div class="project-meta">
-            <div>
-              <p><strong>⏱️ 기간:</strong> 2024.08 - 2024.10</p>
-              <p><strong>👥 역할:</strong> 풀스택 개발 (팀 프로젝트, Backend 주력)</p>
-            </div>
-            <div>
-              <p><strong>💻 기술:</strong> Java, Spring Boot, MyBatis, MariaDB, JSP, JavaScript, HTML/CSS, SiteMesh</p>
-            </div>
-          </div>
+              <div class="project-features">
+                <h4>주요 기능 및 학습</h4>
+                <ul>
+                  <li>제네릭(Generics)을 활용한 다양한 숫자 타입 지원</li>
+                  <li>Enum을 이용한 연산자 타입 관리 및 확장성 확보</li>
+                  <li>람다(Lambda)와 스트림(Stream) API를 활용한 결과 필터링</li>
+                  <li>자바 컬렉션 프레임워크 활용</li>
+                </ul>
+              </div>
 
-          <div class="project-features">
-            <h4>주요 역할 및 기여</h4>
-            <ul>
-              <li>Spring Boot 기반 백엔드 개발 환경 설정 및 주요 로직 개발 주도</li>
-              <li>의사별 스케줄 기반 실시간 예약 가능 시간 조회 및 처리 로직 설계/구현</li>
-              <li>권한 기반 사용자 관리 시스템 (환자/의사/관리자) 구현</li>
-              <li>진료 내역 관리 및 기록 시스템 개발</li>
-              <li>팀 협업 (Git 버전 관리, 코드 리뷰 참여)</li>
-            </ul>
-          </div>
+              <div class="project-features">
+                <h4>배운 점 및 기술적 도전</h4>
+                <ul>
+                  <li>객체지향 설계 원칙(캡슐화, 다형성) 적용 연습</li>
+                  <li>자바 제네릭, Enum, 람다 등 고급 문법 활용 능력 향상</li>
+                  <li>초기 설계 시 연산자 확장이 어려웠으나, Enum과 인터페이스를 활용하여 개선했습니다.</li>
+                </ul>
+              </div>
 
-          <div class="project-features">
-            <h4>배운 점 및 기술적 도전</h4>
-            <ul>
-              <li>Spring Boot 프레임워크 실무 적용 능력 향상</li>
-              <li>복잡한 비즈니스 로직(예약 스케줄링) 설계 및 구현 경험</li>
-              <li>LocalDate, LocalTime을 활용한 날짜/시간 처리 및 스케줄 관리</li>
-              <li>SiteMesh를 활용한 레이아웃 관리 및 일관된 UI 유지</li>
-              <li>MyBatis를 활용한 복잡한 조인 쿼리 작성 및 데이터 처리</li>
-            </ul>
-          </div>
-
-          <a href="https://github.com/jiinyoo/hospital" class="project-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> GitHub Repository
-          </a>
-        </div>
-      </div>
-
-      <!-- 포트폴리오 프로젝트 설명 - 이커머스 플랫폼 -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/shop-project.jpg" alt="이커머스 플랫폼">
-        </div>
-        <div class="project-content">
-          <h3 class="project-title">이커머스 플랫폼</h3>
-          <p class="project-subtitle">상품 관리, 주문 처리, 회원 활동 기능을 갖춘 이커머스 웹 플랫폼</p>
-
-          <div class="project-meta">
-            <div>
-              <p><strong>⏱️ 기간:</strong> 2024.08 - 2024.10</p>
-              <p><strong>👥 역할:</strong> 백엔드 개발</p>
-            </div>
-            <div>
-              <p><strong>💻 기술:</strong> Java, Spring Boot, MyBatis, MariaDB, JSP, JavaScript, HTML/CSS, Spring Scheduler, SiteMesh</p>
+              <a href="https://github.com/balsohn/Calculator" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub Repository
+              </a>
             </div>
           </div>
-
-          <div class="project-features">
-            <h4>주요 기능</h4>
-            <ul>
-              <li>계층형 카테고리 관리 시스템 (대/중/소 분류)</li>
-              <li>상품 관리(CRUD) 및 주문 처리 시스템</li>
-              <li>회원 활동 기반 시스템 (찜하기, 장바구니, 리뷰)</li>
-              <li>타임세일 상품 관리 및 스케줄링</li>
-              <li>비로그인 사용자를 위한 쿠키 기반 장바구니</li>
-            </ul>
-          </div>
-
-          <div class="project-features">
-            <h4>기술적 성과 및 학습</h4>
-            <ul>
-              <li>계층형 카테고리 DB 구조 설계 및 조회 로직 최적화</li>
-              <li>쿠키와 세션을 활용한 장바구니 기능 구현</li>
-              <li>스케줄링을 활용한 타임세일 상품 자동 관리</li>
-              <li>MyBatis를 활용한 동적 쿼리 작성 및 DB 트랜잭션 관리</li>
-              <li>SiteMesh를 활용한 효율적인 화면 구성 및 일관된 UI 유지</li>
-            </ul>
-          </div>
-
-          <a href="https://github.com/balsohn/shop" class="project-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> GitHub Repository
-          </a>
         </div>
       </div>
 
-      <!-- 포트폴리오 프로젝트 설명 - 펜션 예약 관리 시스템 -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="img/pension-project.jpg" alt="펜션 예약 관리 시스템">
+      <!-- Project 3: 통합 병원 관리 시스템 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <img src="img/hospital-project.jpg" alt="통합 병원 관리 시스템" class="accordion-icon">
+            <div class="title-content">
+              <h3>통합 병원 관리 시스템 <span class="project-date">(2024.08-10)</span></h3>
+              <p>환자 예약부터 진료 관리까지 가능한 웹 기반 시스템</p>
+              <div class="project-tech">
+                <span>Spring Boot</span>
+                <span>MyBatis</span>
+                <span>JSP</span>
+                <span>MariaDB</span>
+              </div>
+            </div>
+          </div>
+          <button class="accordion-toggle">
+            <span class="toggle-icon"></span>
+          </button>
         </div>
-        <div class="project-content">
-          <h3 class="project-title">펜션 예약 관리 시스템</h3>
-          <p class="project-subtitle">객실 예약, 관광 정보 공유 기능을 갖춘 웹 시스템</p>
+        <div class="accordion-content">
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <div>
+                  <p><strong>⏱️ 기간:</strong> 2024.08 - 2024.10</p>
+                  <p><strong>👥 역할:</strong> 풀스택 개발 (팀 프로젝트, Backend 주력)</p>
+                </div>
+                <div>
+                  <p><strong>💻 기술:</strong> Java, Spring Boot, MyBatis, MariaDB, JSP, JavaScript, HTML/CSS, SiteMesh</p>
+                </div>
+              </div>
 
-          <div class="project-meta">
-            <div>
-              <p><strong>⏱️ 기간:</strong> 2023.07 - 2023.08</p>
-              <p><strong>👥 역할:</strong> 풀스택 개발 (개인 프로젝트)</p>
+              <div class="project-features">
+                <h4>주요 역할 및 기여</h4>
+                <ul>
+                  <li>Spring Boot 기반 백엔드 개발 환경 설정 및 주요 로직 개발 주도</li>
+                  <li>의사별 스케줄 기반 실시간 예약 가능 시간 조회 및 처리 로직 설계/구현</li>
+                  <li>권한 기반 사용자 관리 시스템 (환자/의사/관리자) 구현</li>
+                  <li>진료 내역 관리 및 기록 시스템 개발</li>
+                  <li>팀 협업 (Git 버전 관리, 코드 리뷰 참여)</li>
+                </ul>
+              </div>
+
+              <div class="project-features">
+                <h4>배운 점 및 기술적 도전</h4>
+                <ul>
+                  <li>Spring Boot 프레임워크 실무 적용 능력 향상</li>
+                  <li>복잡한 비즈니스 로직(예약 스케줄링) 설계 및 구현 경험</li>
+                  <li>LocalDate, LocalTime을 활용한 날짜/시간 처리 및 스케줄 관리</li>
+                  <li>SiteMesh를 활용한 레이아웃 관리 및 일관된 UI 유지</li>
+                  <li>MyBatis를 활용한 복잡한 조인 쿼리 작성 및 데이터 처리</li>
+                </ul>
+              </div>
+
+              <a href="https://github.com/jiinyoo/hospital" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub Repository
+              </a>
             </div>
-            <div>
-              <p><strong>💻 기술:</strong> Java, Spring MVC, MyBatis, MySQL, JSP, JavaScript, HTML/CSS, Apache Tomcat, JavaMail API</p>
-            </div>
           </div>
-
-          <div class="project-features">
-            <h4>주요 기능 및 역할</h4>
-            <ul>
-              <li>객실 예약 시스템 구현 (날짜 기반 객실 가용성 확인)</li>
-              <li>회원 관리 기능 (로그인, 회원가입, 정보 수정)</li>
-              <li>JavaMail API 활용 이메일 인증 기능 구현</li>
-              <li>관광 정보 및 커뮤니티 게시판 CRUD</li>
-              <li>파일 업로드 기능 구현</li>
-            </ul>
-          </div>
-
-          <div class="project-features">
-            <h4>배운 점 및 기술적 도전</h4>
-            <ul>
-              <li>Spring MVC 프레임워크 기반 웹 애플리케이션 개발 경험</li>
-              <li>MyBatis를 활용한 데이터 접근 계층 구현</li>
-              <li>복잡한 날짜 비교 로직 구현 (예약 가능 여부 판단)</li>
-              <li>JSP와 JSTL을 활용한 동적 화면 구현</li>
-            </ul>
-          </div>
-
-          <a href="https://github.com/balsohn/pension" class="project-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> GitHub Repository
-          </a>
         </div>
       </div>
 
-    </div> <!-- .projects-container 닫힘 -->
-  </div> <!-- .container 닫힘 -->
-</section> <!-- #projects 닫힘 -->
+      <!-- Project 4: 이커머스 플랫폼 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <img src="img/shop-project.jpg" alt="이커머스 플랫폼" class="accordion-icon">
+            <div class="title-content">
+              <h3>이커머스 플랫폼 <span class="project-date">(2024.08-10)</span></h3>
+              <p>상품 관리, 주문 처리, 회원 활동 기능을 갖춘 이커머스 웹 플랫폼</p>
+              <div class="project-tech">
+                <span>Spring Boot</span>
+                <span>MyBatis</span>
+                <span>MariaDB</span>
+                <span>Spring Scheduler</span>
+              </div>
+            </div>
+          </div>
+          <button class="accordion-toggle">
+            <span class="toggle-icon"></span>
+          </button>
+        </div>
+        <div class="accordion-content">
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <div>
+                  <p><strong>⏱️ 기간:</strong> 2024.08 - 2024.10</p>
+                  <p><strong>👥 역할:</strong> 백엔드 개발</p>
+                </div>
+                <div>
+                  <p><strong>💻 기술:</strong> Java, Spring Boot, MyBatis, MariaDB, JSP, JavaScript, HTML/CSS, Spring Scheduler, SiteMesh</p>
+                </div>
+              </div>
+
+              <div class="project-features">
+                <h4>주요 기능</h4>
+                <ul>
+                  <li>계층형 카테고리 관리 시스템 (대/중/소 분류)</li>
+                  <li>상품 관리(CRUD) 및 주문 처리 시스템</li>
+                  <li>회원 활동 기반 시스템 (찜하기, 장바구니, 리뷰)</li>
+                  <li>타임세일 상품 관리 및 스케줄링</li>
+                  <li>비로그인 사용자를 위한 쿠키 기반 장바구니</li>
+                </ul>
+              </div>
+
+              <div class="project-features">
+                <h4>기술적 성과 및 학습</h4>
+                <ul>
+                  <li>계층형 카테고리 DB 구조 설계 및 조회 로직 최적화</li>
+                  <li>쿠키와 세션을 활용한 장바구니 기능 구현</li>
+                  <li>스케줄링을 활용한 타임세일 상품 자동 관리</li>
+                  <li>MyBatis를 활용한 동적 쿼리 작성 및 DB 트랜잭션 관리</li>
+                  <li>SiteMesh를 활용한 효율적인 화면 구성 및 일관된 UI 유지</li>
+                </ul>
+              </div>
+
+              <a href="https://github.com/balsohn/shop" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: 펜션 예약 관리 시스템 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <div class="accordion-title">
+            <img src="img/pension-project.jpg" alt="펜션 예약 관리 시스템" class="accordion-icon">
+            <div class="title-content">
+              <h3>펜션 예약 관리 시스템 <span class="project-date">(2023.07-08)</span></h3>
+              <p>객실 예약, 관광 정보 공유 기능을 갖춘 웹 시스템</p>
+              <div class="project-tech">
+                <span>Spring MVC</span>
+                <span>MyBatis</span>
+                <span>MySQL</span>
+                <span>JSP</span>
+              </div>
+            </div>
+          </div>
+          <button class="accordion-toggle">
+            <span class="toggle-icon"></span>
+          </button>
+        </div>
+        <div class="accordion-content">
+          <div class="project-card">
+            <div class="project-content">
+              <div class="project-meta">
+                <div>
+                  <p><strong>⏱️ 기간:</strong> 2023.07 - 2023.08</p>
+                  <p><strong>👥 역할:</strong> 풀스택 개발 (개인 프로젝트)</p>
+                </div>
+                <div>
+                  <p><strong>💻 기술:</strong> Java, Spring MVC, MyBatis, MySQL, JSP, JavaScript, HTML/CSS, Apache Tomcat, JavaMail API</p>
+                </div>
+              </div>
+
+              <div class="project-features">
+                <h4>주요 기능 및 역할</h4>
+                <ul>
+                  <li>객실 예약 시스템 구현 (날짜 기반 객실 가용성 확인)</li>
+                  <li>회원 관리 기능 (로그인, 회원가입, 정보 수정)</li>
+                  <li>JavaMail API 활용 이메일 인증 기능 구현</li>
+                  <li>관광 정보 및 커뮤니티 게시판 CRUD</li>
+                  <li>파일 업로드 기능 구현</li>
+                </ul>
+              </div>
+
+              <div class="project-features">
+                <h4>배운 점 및 기술적 도전</h4>
+                <ul>
+                  <li>Spring MVC 프레임워크 기반 웹 애플리케이션 개발 경험</li>
+                  <li>MyBatis를 활용한 데이터 접근 계층 구현</li>
+                  <li>복잡한 날짜 비교 로직 구현 (예약 가능 여부 판단)</li>
+                  <li>JSP와 JSTL을 활용한 동적 화면 구현</li>
+                </ul>
+              </div>
+
+              <a href="https://github.com/balsohn/pension" class="project-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Blog Section -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div class="section-title">
+      <h2>Blog</h2>
+    </div>
+    
+    <div class="blog-intro">
+      <p>개발 경험과 학습 내용을 기록하고 공유하는 기술 블로그입니다. 실제 프로젝트에서 마주한 문제 해결 과정과 새로운 기술에 대한 인사이트를 확인하세요.</p>
+    </div>
+    
+    <div class="blog-timeline">
+      <!-- 자바스크립트로 블로그 글이 여기에 추가됩니다 -->
+    </div>
+    
+    <div class="blog-cta">
+      <a href="https://balsohn.tistory.com/" class="hero-cta" target="_blank">
+        <i class="fas fa-blog"></i> 티스토리 블로그 방문하기
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 블로그 스크립트 추가 -->
+<script src="js/blog.js"></script>
 
 
 <!-- Strengths Section (수정됨) -->
