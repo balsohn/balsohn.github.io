@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>손지호 | TIL (Today I Learned)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="손지호의 TIL (Today I Learned) - 개발 일지와 학습 기록" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Base CSS Files -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/navi.css">
+  
+  <!-- TIL CSS -->
+  <link rel="stylesheet" href="../css/til.css">
+  
+  <!-- Marked.js for Markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <div class="nav-container">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="nav-logo">Son Jiho</a>
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#skills">Skills</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li><a href="../index.html#blog">Blog</a></li>
+          <li><a href="../til/til.html" class="active">TIL</a></li>
+          <li><a href="../index.html#strengths">Strengths</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- TIL Section -->
+  <section class="til-section" id="til">
+    <div class="container">
+      <div class="section-title">
+        <h2>Today I Learned</h2>
+        <p class="section-subtitle">개발 공부를 하며 배운 점들을 기록하는 공간입니다.</p>
+      </div>
+
+      <!-- TIL Controls -->
+      <div class="til-controls">
+        <button id="new-til-btn" class="til-btn primary">
+          <i class="fas fa-plus"></i> 새 TIL 작성
+        </button>
+        <div class="til-search">
+          <input type="text" id="til-search-input" placeholder="검색어 입력...">
+          <button id="til-search-btn" class="til-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="til-view-toggle">
+          <button id="til-grid-view" class="til-btn active">
+            <i class="fas fa-th-large"></i>
+          </button>
+          <button id="til-list-view" class="til-btn">
+            <i class="fas fa-list"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- TIL List -->
+      <div id="til-list" class="til-grid-view">
+        <!-- TIL 항목들이 JavaScript로 여기에 추가됩니다 -->
+        <div class="til-empty-message">
+          <i class="fas fa-book-open"></i>
+          <p>아직 작성된 TIL이 없습니다. 첫 번째 TIL을 작성해보세요!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIL Editor Modal -->
+  <div id="til-editor-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-title">새 TIL 작성</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="til-title">제목</label>
+          <input type="text" id="til-title" class="form-control" placeholder="TIL 제목을 입력하세요" required>
+        </div>
+        <div class="form-group">
+          <label for="til-tags">태그 (쉼표로 구분)</label>
+          <input type="text" id="til-tags" class="form-control" placeholder="예: JavaScript, React, CSS">
+        </div>
+        <div class="editor-container">
+          <div class="editor-toolbar">
+            <button class="editor-btn" data-markdown="# "><i class="fas fa-heading"></i> H1</button>
+            <button class="editor-btn" data-markdown="## "><i class="fas fa-heading"></i> H2</button>
+            <button class="editor-btn" data-markdown="### "><i class="fas fa-heading"></i> H3</button>
+            <button class="editor-btn" data-markdown="**텍스트**"><i class="fas fa-bold"></i></button>
+            <button class="editor-btn" data-markdown="*텍스트*"><i class="fas fa-italic"></i></button>
+            <button class="editor-btn" data-markdown="~~텍스트~~"><i class="fas fa-strikethrough"></i></button>
+            <button class="editor-btn" data-markdown="- "><i class="fas fa-list-ul"></i></button>
+            <button class="editor-btn" data-markdown="1. "><i class="fas fa-list-ol"></i></button>
+            <button class="editor-btn" data-markdown="[링크 텍스트](URL)"><i class="fas fa-link"></i></button>
+            <button class="editor-btn" data-markdown="![이미지 설명](URL)"><i class="fas fa-image"></i></button>
+            <button class="editor-btn" data-markdown="`코드`"><i class="fas fa-code"></i></button>
+            <button class="editor-btn" data-markdown="```\n코드 블록\n```"><i class="fas fa-file-code"></i></button>
+          </div>
+          <div class="editor-wrapper">
+            <div class="editor-column">
+              <label for="til-content">내용 (마크다운)</label>
+              <textarea id="til-content" class="form-control" placeholder="마크다운으로 내용을 작성하세요"></textarea>
+            </div>
+            <div class="preview-column">
+              <label>미리보기</label>
+              <div id="til-preview" class="markdown-preview"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="save-til-btn" class="til-btn primary">저장</button>
+        <button id="cancel-til-btn" class="til-btn">취소</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIL View Modal -->
+  <div id="til-view-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="view-til-title"></h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="til-meta">
+          <div id="view-til-date" class="til-date"></div>
+          <div id="view-til-tags" class="til-tags"></div>
+        </div>
+        <div id="view-til-content" class="markdown-content"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="edit-til-btn" class="til-btn"><i class="fas fa-edit"></i> 수정</button>
+        <button id="delete-til-btn" class="til-btn danger"><i class="fas fa-trash"></i> 삭제</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">Son Jiho | Backend Developer</div>
+        <div class="social-links">
+          <a href="https://github.com/balsohn" class="social-link" target="_blank" rel="noopener noreferrer"
+            aria-label="GitHub Profile">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://balsohn.tistory.com/" class="social-link" target="_blank" rel="noopener noreferrer"
+            aria-label="Tistory Blog">
+            <i class="fas fa-blog"></i>
+          </a>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2024 Son Jiho. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/navigation.js"></script>
+  <script src="../js/til.js"></script>
+</body>
+
+</html>
