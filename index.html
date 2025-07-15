@@ -16,6 +16,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <meta name="description" content="새로운 도전을 두려워하지 않는 백엔드 개발자 손지호의 포트폴리오입니다." />
   <meta name="keywords" content="Java, Spring, 백엔드, 개발자, 포트폴리오" />
+  
+  <!-- 구조화된 데이터 (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "손지호",
+    "jobTitle": "백엔드 개발자",
+    "description": "새로운 도전을 두려워하지 않는 백엔드 개발자 손지호의 포트폴리오입니다.",
+    "url": "https://balsohn.github.io/",
+    "sameAs": [
+      "https://github.com/balsohn",
+      "https://velog.io/@balsohn"
+    ],
+    "knowsAbout": [
+      "Java",
+      "Spring Boot",
+      "MySQL",
+      "Redis",
+      "JWT",
+      "백엔드 개발",
+      "동시성 제어",
+      "REST API"
+    ],
+    "email": "balsohn@gmail.com",
+    "telephone": "010-4258-0562",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "파주시",
+      "addressRegion": "경기도",
+      "addressCountry": "KR"
+    }
+  }
+  </script>
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,8 +162,13 @@
           <div class="skill-tags">
             <span class="skill-tag level-proficient" title="Proficient (능숙)">Java</span>
             <span class="skill-tag level-proficient" title="Proficient (능숙)">Spring / Boot</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">Spring Security</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">Spring AOP</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">JPA / Hibernate</span>
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">MyBatis</span>
-            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">JSP / Servlet</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">RESTful API</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">JWT</span>
+            <span class="skill-tag level-intermediate" title="Intermediate (중급)">JSP / Servlet</span>
           </div>
           <p class="skill-group-summary">
             - 객체지향 원칙 기반 Spring Boot
@@ -145,7 +185,9 @@
           <div class="skill-tags">
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">MySQL</span>
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">MariaDB</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">Redis</span>
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">SQL</span>
+            <span class="skill-tag level-basic" title="Basic (기본)">H2</span>
           </div>
           <p class="skill-group-summary">
             - 관계형 DB 설계
@@ -166,6 +208,8 @@
             <span class="skill-tag level-intermediate" title="Intermediate (중급)">JavaScript (ES6+)</span>
             <span class="skill-tag level-intermediate" title="Intermediate (중급)">jQuery</span>
             <span class="skill-tag level-intermediate" title="Intermediate (중급)">Ajax</span>
+            <span class="skill-tag level-intermediate" title="Intermediate (중급)">Bootstrap</span>
+            <span class="skill-tag level-basic" title="Basic (기본)">Thymeleaf</span>
             <span class="skill-tag level-basic" title="Basic (기본)">React.js</span>
           </div>
           <p class="skill-group-summary">
@@ -180,12 +224,31 @@
         </div>
 
         <div class="skill-group">
+          <h4><i class="fas fa-vial skill-icon"></i> Testing & API</h4>
+          <div class="skill-tags">
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">JUnit5</span>
+            <span class="skill-tag level-experienced" title="Experienced (경험 있음)">Mockito</span>
+            <span class="skill-tag level-intermediate" title="Intermediate (중급)">Postman</span>
+          </div>
+          <p class="skill-group-summary">
+            - 단위 테스트 및 Mock 테스트
+          </p>
+          <p class="skill-group-summary">
+            - API 테스트 및 문서화
+          </p>
+          <p class="skill-group-summary">
+            - 동시성 테스트 경험
+          </p>
+        </div>
+
+        <div class="skill-group">
           <h4><i class="fas fa-tools skill-icon"></i> DevOps & Tools</h4>
           <div class="skill-tags">
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">Git / GitHub</span>
             <span class="skill-tag level-proficient" title="Proficient (능숙)">Eclipse</span>
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">IntelliJ IDEA</span>
             <span class="skill-tag level-experienced" title="Experienced (경험 있음)">Apache Tomcat</span>
+            <span class="skill-tag level-basic" title="Basic (기본)">Docker</span>
           </div>
           <p class="skill-group-summary">
             - Git 버전 관리/협업
@@ -220,6 +283,89 @@
       </div>
 
       <div class="projects-accordion">
+        <!-- Project 9: OuterPark - Redis 분산 락 기반 콘서트 예약 시스템 (팀 프로젝트) -->
+        <div class="accordion-item" data-tags="SpringBoot Redis 분산락 JWT MySQL TeamProject Backend AOP 동시성제어">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <img src="img/outerpark-project.jpg" alt="OuterPark 콘서트 예약 시스템" class="accordion-icon">
+              <div class="title-content">
+                <h3>OuterPark - Redis 분산 락 기반 콘서트 예약 시스템 <span class="project-date">(2025.07)</span></h3>
+                <p>Redis 분산 락과 AOP를 활용한 동시성 제어 기반 콘서트 예약 시스템</p>
+                <div class="project-tech">
+                  <span>Spring Boot</span>
+                  <span>Redis 분산락</span>
+                  <span>Spring AOP</span>
+                  <span>JWT Authentication</span>
+                  <span>MySQL</span>
+                  <span>동시성제어</span>
+                </div>
+              </div>
+            </div>
+            <button class="accordion-toggle" aria-label="Toggle details">
+              <span class="toggle-icon"></span>
+            </button>
+          </div>
+          <div class="accordion-content">
+            <div class="project-card">
+              <div class="project-content">
+                <div class="project-meta">
+                  <div>
+                    <p><strong>⏱️ 기간:</strong> 2025.07.07 - 2025.07.15 (9일간)</p>
+                    <p><strong>👥 역할:</strong> Seat 도메인 + Redis 분산 락 시스템 개발 (6명 팀 프로젝트)</p>
+                  </div>
+                  <div>
+                    <p><strong>💻 기술:</strong> Java 17, Spring Boot 3.5.3, Redis, MySQL, JWT, Spring AOP, Spring Security</p>
+                  </div>
+                </div>
+                <div class="project-features">
+                  <h4>개인 담당 - Seat 도메인 핵심 구현</h4>
+                  <ul>
+                    <li>좌석 자연순 정렬 알고리즘 구현 (A-1, A-2, A-10, B-1 순서)</li>
+                    <li>Pessimistic Lock 기반 다중 좌석 동시성 제어</li>
+                    <li>DTO Projection 활용한 성능 최적화 (N+1 문제 해결)</li>
+                    <li>좌석 상태 동적 관리 (PENDING, CONFIRMED, CANCELLED)</li>
+                    <li>좌석 유효성 검증 및 예약 가능성 체크 로직</li>
+                  </ul>
+                </div>
+                <div class="project-features">
+                  <h4>팀 협업 - Redis 분산 락 시스템</h4>
+                  <ul>
+                    <li>AOP 기반 락 처리로 비즈니스 로직과 락 로직 완전 분리</li>
+                    <li>Lua 스크립트 활용한 원자적 락 획득/해제 메커니즘</li>
+                    <li>데드락 방지를 위한 좌석 ID 정렬 기반 락 순서 보장</li>
+                    <li>TTL 기반 자동 락 해제로 무한 대기 상황 방지</li>
+                    <li>UUID 기반 락 소유권 검증 및 안전한 락 해제</li>
+                  </ul>
+                </div>
+                <div class="project-features">
+                  <h4>기술적 성과 및 도전 과제</h4>
+                  <ul>
+                    <li>10개 스레드 동시성 테스트 통과 - 정확히 1개 예약만 성공 보장</li>
+                    <li>좌석 정렬 알고리즘: 구역-번호 형태를 자연스럽게 정렬하는 로직 구현</li>
+                    <li>분산 락 충돌 처리: 부분 성공 시 획득한 모든 락의 안전한 롤백</li>
+                    <li>Mock 기반 단위 테스트로 외부 의존성 제거 및 코드 품질 향상</li>
+                    <li>체계적인 예외 처리: 의미 있는 오류 메시지와 HTTP 상태 코드 매핑</li>
+                  </ul>
+                </div>
+                <div class="project-features">
+                  <h4>개발 배경 및 학습 성과</h4>
+                  <ul>
+                    <li>콘서트 예약 시스템에서 발생하는 동시성 문제 해결이 핵심 과제</li>
+                    <li>Redis 분산 락을 통한 확장 가능한 동시성 제어 방식 학습</li>
+                    <li>Spring AOP의 횡단 관심사 처리 방식 실무 적용</li>
+                    <li>팀 협업을 통한 대규모 시스템 아키텍처 설계 경험</li>
+                    <li>실제 서비스 수준의 예외 처리 및 테스트 코드 작성 역량 향상</li>
+                  </ul>
+                </div>
+                <a href="https://github.com/DOGYUN0903/outerpark" class="project-link" target="_blank"
+                   rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> GitHub Repository
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Project 8: Picflow - 소셜 미디어 백엔드 API (개인 프로젝트) -->
         <div class="accordion-item" data-tags="SpringBoot JWT MySQL RESTfulAPI Backend Individual">
           <div class="accordion-header">
@@ -759,8 +905,8 @@
       </div>
 
       <div class="blog-cta">
-        <a href="https://balsohn.tistory.com/" class="hero-cta" target="_blank">
-          <i class="fas fa-blog"></i> 티스토리 블로그 방문하기
+        <a href="https://velog.io/@balsohn" class="hero-cta" target="_blank">
+          <i class="fas fa-blog"></i> Velog 블로그 방문하기
         </a>
       </div>
     </div>
@@ -882,8 +1028,8 @@
             </div>
             <div class="info-content">
               <h4>Blog</h4>
-              <p><a href="https://balsohn.tistory.com/" target="_blank"
-                  rel="noopener noreferrer">https://balsohn.tistory.com/</a></p>
+              <p><a href="https://velog.io/@balsohn" target="_blank"
+                  rel="noopener noreferrer">https://velog.io/@balsohn</a></p>
             </div>
           </div>
 
@@ -912,9 +1058,9 @@
             aria-label="GitHub Profile">
             <i class="fab fa-github"></i>
           </a>
-          <!-- tistory -->
-          <a href="https://balsohn.tistory.com/" class="social-link" target="_blank" rel="noopener noreferrer"
-            aria-label="Tistory Blog">
+          <!-- velog -->
+          <a href="https://velog.io/@balsohn" class="social-link" target="_blank" rel="noopener noreferrer"
+            aria-label="Velog Blog">
             <i class="fas fa-blog"></i>
           </a>
           <!-- 다른 소셜 링크 필요시 추가 -->

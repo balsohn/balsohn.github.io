@@ -1,0 +1,1480 @@
+/* Base Styles */
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --secondary: #3f37c9;
+  --dark: #1f1f1f;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+  --success: #4cc9f0;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-light);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  background-color: var(--primary);
+  bottom: 0;
+  left: 0;
+  border-radius: 2px;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.emphasis {
+  font-style: italic;
+  color: var(--gray);
+  font-size: 0.9em;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+}
+
+/* Navigation */
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  transition: var(--transition);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.hamburger i {
+  transition: transform 0.3s ease;
+}
+
+.hamburger.active i::before {
+  content: "\f00d";
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--light);
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(76, 201, 240, 0.05) 100%);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 300px;
+  padding-right: 2rem;
+}
+
+.hero-image {
+  flex-basis: 40%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: 5px solid white;
+  object-fit: cover;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.hero-description {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--gray);
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+}
+
+.hero-cta:hover {
+  background-color: var(--secondary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(63, 55, 201, 0.4);
+}
+
+/* About Section */
+.about {
+  background-color: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-content p {
+  color: var(--gray);
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.info-table th,
+.info-table td {
+  text-align: left;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--light-gray);
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 100px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.info-table td a {
+  word-break: break-all;
+}
+
+/* --- 새로운 Skills Section 스타일 (Compact / Tag Style) --- */
+
+.skills-compact {
+  background-color: var(--light);
+  /* 또는 흰색 등 배경색 지정 */
+}
+
+.skills-grid-compact {
+  display: grid;
+  /* 기본값: 작은 화면에서는 자동으로 컬럼 수를 조절 */
+  /* minmax 값을 조정하여 중간 크기 화면에서의 컬럼 수를 조절할 수 있습니다. */
+  /* 예를 들어 minmax(250px, 1fr) 로 하면 더 작은 너비에서도 여러 컬럼이 생길 수 있습니다. */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* 최소 너비를 약간 줄여 유연성 확보 */
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.skill-group {
+  background-color: white;
+  padding: 1.5rem;
+  /* 내부 여백 약간 줄임 */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+  /* 마우스 오버 효과를 위한 투명 테두리 */
+}
+
+.skill-group:hover {
+  transform: translateY(-4px);
+  /* 살짝 위로 이동하는 효과 */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  /* 그림자 강조 */
+  border-left-color: var(--primary);
+  /* 왼쪽에 강조 색상 표시 */
+}
+
+.skill-group h4 {
+  font-size: 1.2rem;
+  /* 제목 크기 약간 줄임 */
+  margin-bottom: 1rem;
+  color: var(--dark);
+  display: flex;
+  /* 아이콘과 텍스트 정렬 */
+  align-items: center;
+}
+
+.skill-icon {
+  color: var(--primary);
+  /* 아이콘 색상 */
+  margin-right: 0.75rem;
+  /* 아이콘과 텍스트 사이 간격 */
+  font-size: 1.1em;
+  /* 아이콘 크기 */
+  width: 20px;
+  /* 아이콘 너비 고정 (정렬 도움) */
+  text-align: center;
+}
+
+.skill-tags {
+  display: flex;
+  /* 태그들을 가로로 배열 */
+  flex-wrap: wrap;
+  /* 태그가 많으면 다음 줄로 넘김 */
+  gap: 0.6rem;
+  /* 태그 사이의 간격 */
+  margin-bottom: 1rem;
+  /* 태그 영역과 요약 문단 사이 간격 */
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  /* 태그 내부 여백 */
+  border-radius: 20px;
+  /* 둥근 모서리 */
+  font-size: 0.85rem;
+  /* 폰트 크기 */
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: default;
+  /* 마우스 커서 기본 모양 */
+  transition: var(--transition);
+  background-color: var(--light-gray);
+  /* 기본 태그 배경색 */
+  color: var(--dark);
+  /* 기본 태그 글자색 */
+  border: 1px solid transparent;
+}
+
+/* 숙련도별 태그 스타일 */
+.skill-tag.level-proficient {
+  background-color: rgba(67, 97, 238, 0.15);
+  /* var(--primary)의 연한 버전 */
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.skill-tag.level-experienced {
+  background-color: rgba(72, 149, 239, 0.15);
+  /* var(--primary-light)의 연한 버전 */
+  color: var(--primary-light);
+}
+
+.skill-tag.level-intermediate {
+  background-color: rgba(108, 117, 125, 0.15);
+  /* var(--gray)의 연한 버전 */
+  color: var(--gray);
+}
+
+.skill-tag.level-basic {
+  background-color: var(--light-gray);
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* 태그 위에 마우스 올렸을 때 약간의 효과 (선택사항) */
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.skill-group-summary {
+  font-size: 0.9rem;
+  /* 요약 문단 폰트 크기 */
+  color: var(--gray);
+  /* 요약 문단 색상 */
+  line-height: 1.6;
+  margin-bottom: 0;
+  /* 마지막 요소이므로 하단 마진 제거 */
+}
+
+/* (선택사항) 범례 스타일 */
+.skill-legend {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.legend-item {
+  display: inline-flex;
+  /* 아이템들을 가로로 배열 */
+  align-items: center;
+  /* 색상 상자와 텍스트 수직 정렬 */
+  margin: 0 0.75rem;
+  /* 아이템 간 간격 */
+}
+
+.legend-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 범례 색상과 태그 색상 일치 */
+.legend-color.level-proficient {
+  background-color: rgba(67, 97, 238, 0.8);
+}
+
+.legend-color.level-experienced {
+  background-color: rgba(72, 149, 239, 0.8);
+}
+
+.legend-color.level-intermediate {
+  background-color: rgba(108, 117, 125, 0.8);
+}
+
+.legend-color.level-basic {
+  background-color: #ced4da;
+}
+
+/* var(--light-gray)와 유사 */
+
+/* 반응형: 모바일 화면에서는 그룹을 다시 세로로 쌓음 */
+@media (min-width: 1100px) {
+  .skills-grid-compact {
+    /* 4개의 동일한 너비 컬럼으로 설정 */
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid-compact {
+    /* 모바일에서는 1컬럼으로 강제 */
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 아코디언 스타일 */
+.projects-accordion {
+  margin-top: 2rem;
+}
+
+.accordion-item {
+  margin-bottom: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.accordion-item:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px);
+}
+
+.accordion-item.active {
+  border-left: 4px solid var(--primary) !important;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: var(--light-gray) !important;
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex: 1;
+}
+
+.accordion-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: all 0.4s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item:hover .accordion-icon {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.2);
+}
+
+.title-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--dark);
+  transition: color 0.3s ease;
+}
+
+.accordion-item.active {
+  border-left: 4px solid var(--primary) !important;
+}
+
+.title-content p {
+  margin: 0.3rem 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+/* 기술 태그 스타일 */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-tech span {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+  color: var(--primary);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover .project-tech span {
+  background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+/* 토글 버튼 스타일 */
+.accordion-toggle {
+  background: none;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: var(--light-gray);
+  position: relative;
+}
+
+.toggle-icon {
+  position: relative;
+  width: 14px;
+  height: 2px;
+  background-color: transparent;
+}
+
+.toggle-icon::before,
+.toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 2px;
+  background-color: var(--dark) !important;
+  transition: all 0.3s ease;
+  left: 0;
+}
+
+.toggle-icon::before {
+  transform: rotate(90deg);
+}
+
+.accordion-item.active .toggle-icon::before {
+  transform: rotate(0);
+}
+
+.accordion-item:hover .accordion-toggle {
+  background-color: var(--primary) !important;
+}
+
+.accordion-item:hover .title-content h3 {
+  color: var(--dark) !important;
+}
+
+.accordion-item:hover .toggle-icon::before,
+.accordion-item:hover .toggle-icon::after {
+  background-color: white !important;
+}
+
+/* 프로젝트 날짜 스타일 */
+.project-date {
+  font-size: 0.7em;
+  color: var(--gray);
+  font-weight: normal;
+  margin-left: 0.5rem;
+}
+
+/* 아코디언 내용 */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  background-color: white;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 2000px;
+  transition: max-height 1s ease-in-out;
+}
+
+.project-card {
+  box-shadow: none;
+  border-radius: 0;
+  border-top: 1px solid var(--light-gray);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-meta {
+  margin-bottom: 1.5rem;
+}
+
+.project-meta p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--gray);
+}
+
+.project-features {
+  margin-bottom: 1.5rem;
+}
+
+.project-features h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.project-features h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.project-features ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.project-features li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.project-features li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--dark) !important;
+  font-size: 0.9em;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  border-radius: var(--border-radius);
+  background-color: var(--primary);
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  text-align: center;
+  text-decoration: none;
+}
+
+.project-link i {
+  margin-right: 0.5rem;
+}
+
+.project-link:hover {
+  background-color: var(--secondary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(var(--primary-rgb), 0.3);
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .accordion-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .accordion-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title-content {
+    width: 100%;
+  }
+}
+
+/* 처음에 숨길 프로젝트 항목 스타일 */
+.accordion-item.project-hidden {
+  display: none;
+}
+
+/* 더보기 버튼 기본 스타일 (기존 버튼 스타일 활용 또는 새로 정의) */
+#load-more-projects {
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+  /* outline: none; */
+}
+
+#load-more-projects:hover {
+  background-color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(63, 55, 201, 0.4);
+}
+
+/* 로드할 항목이 없을 때 버튼 숨김 (JS에서 display: none; 으로 제어하지만, 만약을 대비) */
+#load-more-projects.hidden {
+  display: none;
+}
+
+/* --- Project Filtering Styles --- */
+
+/* 필터 태그 버튼들을 담는 컨테이너 */
+.project-filters {
+  display: flex; /* 버튼들을 가로로 배열 */
+  flex-wrap: wrap; /* 버튼이 많으면 다음 줄로 넘김 */
+  gap: 0.75rem; /* 버튼 사이의 간격 */
+  justify-content: center; /* 버튼들을 가운데 정렬 */
+  margin-bottom: 2rem; /* 필터와 프로젝트 목록 사이의 간격 */
+}
+
+/* 기본 필터 태그 버튼 스타일 */
+.filter-tag {
+  padding: 0.5rem 1rem; /* 내부 여백 */
+  border: 1px solid var(--light-gray); /* 테두리 */
+  background-color: white; /* 배경색 */
+  color: var(--gray); /* 글자색 */
+  border-radius: 20px; /* 둥근 모서리 */
+  cursor: pointer; /* 마우스 커서 */
+  transition: var(--transition); /* 부드러운 전환 효과 */
+  font-size: 0.9rem; /* 폰트 크기 */
+  font-weight: 500; /* 폰트 굵기 */
+  outline: none; /* 포커스 시 외곽선 제거 */
+}
+
+/* 필터 태그 버튼 마우스 호버 시 스타일 */
+.filter-tag:hover {
+  background-color: var(--light-gray); /* 배경색 약간 변경 */
+  color: var(--dark); /* 글자색 변경 */
+}
+
+/* 활성화된(선택된) 필터 태그 버튼 스타일 */
+.filter-tag.active {
+  background-color: var(--primary); /* 주 색상 배경 */
+  color: white; /* 흰색 글자 */
+  border-color: var(--primary); /* 테두리 색상 동일하게 */
+}
+
+/* 필터링되어 화면에서 숨겨진 프로젝트 아이템 */
+.accordion-item.project-filtered-out {
+  display: none; /* 완전히 숨김 */
+}
+
+
+/* Blog Section - 모던 타임라인 스타일 */
+.blog {
+  background-color: var(--light);
+}
+
+.blog-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.blog-timeline {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.blog-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8px;
+  width: 2px;
+  background-color: var(--light-gray);
+}
+
+/* --- Blog Card Styles --- */
+.blog-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.blog-card {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover,
+.blog-card.hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.blog-card .card-image {
+  height: 150px; /* 고정 높이 또는 aspect-ratio 사용 고려 */
+  overflow: hidden;
+  background-color: var(--light-gray); /* 이미지 없을 때 배경색 */
+}
+
+.blog-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.blog-card .card-content {
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.blog-card .card-date {
+  font-size: 12px;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.blog-card .card-title {
+  margin: 0 0 10px 0;
+  font-size: 17px; /* h4 스타일 적용 */
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.4;
+   /* 여러 줄 제목 처리 */
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* 최대 2줄 */
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   min-height: calc(1.4em * 2); /* 2줄 높이 확보 */
+}
+
+.blog-card .card-excerpt {
+  margin: 0;
+  font-size: 14px;
+  color: var(--gray);
+  line-height: 1.6;
+   /* 여러 줄 내용 처리 */
+   display: -webkit-box;
+   -webkit-line-clamp: 3; /* 최대 3줄 */
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.2);
+  z-index: 1;
+}
+
+.timeline-date {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: var(--dark);
+}
+
+.timeline-excerpt {
+  color: var(--gray);
+  margin-bottom: 1rem;
+}
+
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.timeline-link i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-content:hover .timeline-link i {
+  transform: translateX(3px);
+}
+
+.blog-cta {
+  text-align: center;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .blog-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item::before {
+    left: -1.5rem;
+  }
+}
+
+/* Strengths Section */
+.strengths {
+  background-color: var(--light);
+}
+
+.strengths-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.strength-card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.strength-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.strength-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(67, 97, 238, 0.1);
+  border-radius: 50%;
+}
+
+.strength-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.strength-card p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact {
+  background-color: white;
+  padding-bottom: 5rem;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-form h3,
+.contact-info h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--dark);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: var(--border-radius);
+  font-family: inherit;
+  transition: var(--transition);
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+textarea.form-control {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 0.8rem 1.8rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(67, 97, 238, 0.3);
+}
+
+.submit-btn:hover {
+  background-color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(63, 55, 201, 0.4);
+}
+
+.form-notice {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+
+.info-content h4 {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.info-content p {
+  margin-bottom: 0;
+  color: var(--gray);
+}
+
+.info-content p a {
+  color: var(--primary);
+  word-break: break-all;
+}
+
+.info-content p a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.footer-content {
+  margin-bottom: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
+  transition: var(--transition);
+  font-size: 1.1rem;
+}
+
+.social-link:hover {
+  background-color: var(--primary);
+  transform: translateY(-3px);
+  color: white;
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    order: 2;
+    margin-top: 2rem;
+  }
+
+  .hero-image {
+    order: 1;
+    margin-bottom: 0;
+    flex-basis: auto;
+    width: 60%;
+    max-width: 300px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .section-title h2::after {
+    width: 60px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    padding: 1rem 0;
+  }
+
+  .nav-links li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background-color: var(--light);
+    border-bottom-color: var(--light-gray);
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero {
+    padding-top: 65px;
+    min-height: auto;
+  }
+
+  .hero-image {
+    width: 50%;
+    max-width: 250px;
+  }
+
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .skills-container {
+    gap: 1.5rem;
+  }
+
+  .skill-category {
+    flex-basis: calc(100% - 2rem);
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .strengths-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print specific styles */
+@media print {
+  body {
+    color: #000;
+    background-color: #fff;
+  }
+
+  .nav-container,
+  .hero-cta,
+  .submit-btn,
+  .footer,
+  .hamburger,
+  .project-link,
+  .project-code {
+    display: none !important;
+  }
+
+  section {
+    padding: 2rem 0;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: #000;
+  }
+
+  h2::after {
+    background-color: #000;
+  }
+
+  .hero,
+  .about,
+  .skills,
+  .projects,
+  .strengths,
+  .contact {
+    background-color: transparent;
+  }
+
+  .project-card,
+  .skill-category,
+  .strength-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+
+  .skill-level-fill {
+    background: #ccc;
+  }
+
+  .info-icon {
+    background-color: #ccc;
+    color: #000;
+  }
+}

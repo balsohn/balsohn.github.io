@@ -25,11 +25,6 @@
     color: var(--dark);
     background-color: var(--light);
     overflow-x: hidden;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-drag: none;
   }
   
   a {

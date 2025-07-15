@@ -1,14 +1,14 @@
 /**
  * Blog Module
- * Fetches and displays blog posts from Tistory RSS feed
+ * Fetches and displays blog posts from Velog RSS feed
  */
 
 const Blog = (function() {
     // Configuration
     const config = {
-      targetCategory: '개발 시리즈',
+      targetCategory: '개발',
       maxPosts: 6,
-      blogUrl: 'https://balsohn.tistory.com/rss',
+      blogUrl: 'https://v2.velog.io/rss/@balsohn',
       corsProxies: [
         'https://api.allorigins.win/get?url=',
         'https://corsproxy.io/?',
@@ -49,18 +49,10 @@ const Blog = (function() {
         
         // Get all items
         const items = xmlDoc.querySelectorAll('item');
-        console.log(`Total blog posts: ${items.length}`);
         
-        // Filter items by category
-        const filteredItems = Array.from(items).filter(item => {
-          const categoryElements = item.querySelectorAll('category');
-          const categories = Array.from(categoryElements).map(el => el.textContent.toLowerCase());
-          
-          return categories.includes(config.targetCategory.toLowerCase()) || 
-                 categories.some(cat => cat.includes(config.targetCategory.toLowerCase()));
-        });
-        
-        console.log(`Filtered blog posts: ${filteredItems.length}`);
+        // For Velog, show all posts (no category filtering)
+        // Velog uses tags differently than Tistory
+        const filteredItems = Array.from(items).slice(0, config.maxPosts);
         
         // Remove loading indicator
         hideLoading(blogContainer);
@@ -115,6 +107,17 @@ const Blog = (function() {
         console.warn('Date parsing error:', error);
       }
       
+      // Extract categories - Debug Velog RSS structure
+      const categories = Array.from(item.querySelectorAll('category'))
+        .map(cat => cat.textContent.trim())
+        .filter(cat => cat);
+      
+      // Debug: Log the full item structure for first post
+      if (categories.length === 0) {
+        console.log('RSS Item structure:', item.innerHTML);
+        console.log('Available elements:', Array.from(item.children).map(el => el.tagName));
+      }
+      
       // Clean description (remove HTML tags)
       const tempDiv = document.createElement('div');
       tempDiv.innerHTML = descriptionHtml;
@@ -154,9 +157,20 @@ const Blog = (function() {
         `;
       }
       
+      // Create category tags HTML
+      let categoryTagsHtml = '';
+      if (categories.length > 0) {
+        categoryTagsHtml = `
+          <div class="card-categories">
+            ${categories.map(category => `<span class="category-tag">${category}</span>`).join('')}
+          </div>
+        `;
+      }
+
       cardHtml += `
         <div class="card-content">
           <div class="card-date">${formattedDate}</div>
+          ${categoryTagsHtml}
           <h4 class="card-title">${title}</h4>
           <p class="card-excerpt">${description}</p>
         </div>
@@ -173,7 +187,6 @@ const Blog = (function() {
     async function fetchWithCorsProxies() {
       for (const proxy of config.corsProxies) {
         try {
-          console.log(`Trying proxy: ${proxy}`);
           const response = await fetch(proxy + encodeURIComponent(config.blogUrl));
           
           if (!response.ok) {
@@ -183,13 +196,11 @@ const Blog = (function() {
           if (proxy.includes('allorigins')) {
             const jsonData = await response.json();
             if (jsonData.contents) {
-              console.log('allorigins proxy success');
               return jsonData.contents;
             }
             continue;
           } else {
             const data = await response.text();
-            console.log(`${proxy} proxy success`);
             return data;
           }
         } catch (error) {
