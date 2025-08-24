@@ -83,7 +83,6 @@
           <li><a href="#blog">Blog</a></li>
           <li><a href="#strengths">Strengths</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#" id="open-readme-modal" data-no-scroll="true" aria-haspopup="dialog" aria-controls="readme-modal">README</a></li>
         </ul>
         <div class="hamburger">
           <i class="fas fa-bars"></i>
@@ -1206,91 +1205,11 @@
     </div>
   </footer>
 
-  <!-- README Modal -->
-  <div id="readme-modal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="readme-modal-title" tabindex="-1">
-      <div class="modal-header">
-        <h2 id="readme-modal-title">My Contributions (README)</h2>
-        <button type="button" class="modal-close" id="readme-close" aria-label="Close README">
-          <i class="fas fa-times" aria-hidden="true"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <section class="readme-section">
-          <h3>이 문서는?</h3>
-          <p>팀/개인 프로젝트에서 제가 맡았던 역할과 문제 해결 내용을 정리한 개인 README입니다. 깃허브 팀 README와 별도로, 제 기여 관점에서 핵심 포인트만 빠르게 확인할 수 있도록 구성했습니다.</p>
-        </section>
-
-        <section class="readme-section">
-          <h3>Where We Go — 여행 코스 공유 플랫폼 (팀)</h3>
-          <ul>
-            <li>Place 도메인: Google Places 응답 → 내부 Place 변환/저장, 장소 검색/상세, 북마크·리뷰·평점 API 설계/구현</li>
-            <li>Payments 환불: 환불 승인/콜백 검증, 상태 전이(REQUESTED→APPROVED/REJECTED) 및 금액/서명 검증 로직</li>
-            <li>배포: GitHub Actions → ECR/ECS(Fargate) 자동 배포, ALB 헬스체크/롤백 기준 구성</li>
-            <li>S3 이미지 업로드: 버킷/폴더 구조, 업로드 API, 최소 권한 정책(least privilege) 적용</li>
-          </ul>
-          <p>
-            <a href="https://github.com/two2gether/where-we-go" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
-          </p>
-        </section>
-
-        <section class="readme-section">
-          <h3>OuterPark — 콘서트 예약 시스템 (팀)</h3>
-          <ul>
-            <li>개인 담당(Seat): 좌석 자연순 정렬, Pessimistic Lock 기반 다중 좌석 동시성 제어, DTO Projection 최적화</li>
-            <li>좌석 상태 전이(PENDING/CONFIRMED/CANCELLED) 및 유효성 검증 로직</li>
-            <li>팀 협업: AOP + Redis 분산 락 설계 참여, Lua 스크립트 기반 원자적 락/해제, 데드락 방지 순서 보장</li>
-          </ul>
-          <p>
-            <a href="https://github.com/DOGYUN0903/outerpark" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
-          </p>
-        </section>
-
-        <section class="readme-section">
-          <h3>Picflow — 소셜 미디어 백엔드 API (개인)</h3>
-          <ul>
-            <li>JWT 인증/인가 전반, 표준화된 REST API, 파일 업로드 및 예외 처리 체계</li>
-            <li>연관관계 매핑(User-Post-Comment-Like-Follow)와 DTO/문서화</li>
-            <li>Global Exception, ApiResponse<T>, 보안/필터 체인 구성</li>
-          </ul>
-          <p>
-            <a href="https://github.com/balsohn/picflow" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
-          </p>
-        </section>
-
-        <section class="readme-section">
-          <h3>newsFeed — SNS 백엔드 플랫폼 (팀)</h3>
-          <ul>
-            <li>JWT 기반 회원가입/로그인, 게시물/댓글 CRUD, 좋아요 중복 방지, 팔로우/검색</li>
-            <li>DTO 패턴과 PagedResponse로 순환 참조/페이징 이슈 해결</li>
-            <li>공통 예외 처리와 응답 포맷 정립으로 팀 내 API 일관성 강화</li>
-          </ul>
-          <p>
-            <a href="https://github.com/balsohn/newsFeed" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
-          </p>
-        </section>
-
-        <section class="readme-section">
-          <h3>연락처</h3>
-          <p>
-            <a href="mailto:balsohn@gmail.com"><i class="fas fa-envelope"></i> balsohn@gmail.com</a>
-            ·
-            <a href="https://github.com/balsohn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
-            ·
-            <a href="https://velog.io/@balsohn" target="_blank" rel="noopener noreferrer"><i class="fas fa-blog"></i> Velog</a>
-          </p>
-          <p style="color:var(--gray); font-size:0.9rem;">Last updated: 2025-08-24</p>
-        </section>
-      </div>
-    </div>
-  </div>
-
   <!-- JavaScript -->
   <script src="js/navi.js"></script>
   <script src="js/scrollspy.js"></script>
   <script src="js/typing-effect.js"></script>
   <script src="js/projects.js"></script>
-  <script src="js/modal-readme.js"></script>
   <script src="js/main.js"></script>
 </body>
 
