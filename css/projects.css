@@ -206,6 +206,11 @@
     padding: 1.5rem;
   }
   
+  /* Improve readability in project content */
+  .project-content p {
+    line-height: 1.7;
+  }
+  
   .project-meta {
     margin-bottom: 1.5rem;
   }
@@ -214,6 +219,7 @@
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     color: var(--gray);
+    line-height: 1.6;
   }
   
   /* Project Features */
@@ -246,10 +252,11 @@
   }
   
   .project-features li {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
     position: relative;
     padding-left: 1.5rem;
     font-size: 0.95rem;
+    line-height: 1.7;
   }
   
   .project-features li::before {

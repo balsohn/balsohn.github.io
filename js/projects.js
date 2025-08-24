@@ -110,6 +110,17 @@ const Projects = (function() {
       const accordionContainer = document.querySelector('.projects-accordion');
       if (!accordionContainer) return;
       
+      function setItemOpenState(item, open) {
+        const content = item.querySelector('.accordion-content');
+        if (!content) return;
+        if (open) {
+          // First set to auto height to measure full content
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0px';
+        }
+      }
+      
       accordionContainer.addEventListener('click', function(e) {
         const header = e.target.closest('.accordion-header');
         if (!header) return;
@@ -121,11 +132,14 @@ const Projects = (function() {
         accordionContainer.querySelectorAll('.accordion-item:not(.project-filtered-out).active').forEach(item => {
           if (item !== currentItem) {
             item.classList.remove('active');
+            setItemOpenState(item, false);
           }
         });
         
         // Toggle current accordion
+        const willOpen = !currentItem.classList.contains('active');
         currentItem.classList.toggle('active');
+        setItemOpenState(currentItem, willOpen);
         
         // Scroll to opened accordion (with slight delay for animation)
         if (currentItem.classList.contains('active')) {

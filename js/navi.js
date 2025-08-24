@@ -44,6 +44,12 @@ const Navigation = (function() {
     function setupSmoothScrolling() {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+          // Skip smooth scroll for elements explicitly marked
+          if (this.hasAttribute('data-no-scroll')) {
+            e.preventDefault();
+            return;
+          }
+
           e.preventDefault();
           const targetId = this.getAttribute('href');
           

@@ -83,6 +83,7 @@
           <li><a href="#blog">Blog</a></li>
           <li><a href="#strengths">Strengths</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#" id="open-readme-modal" data-no-scroll="true" aria-haspopup="dialog" aria-controls="readme-modal">README</a></li>
         </ul>
         <div class="hamburger">
           <i class="fas fa-bars"></i>
@@ -283,6 +284,138 @@
       </div>
 
       <div class="projects-accordion">
+
+        <!-- Project: Where We Go - 여행 코스 공유 플랫폼 (최신/대표 프로젝트) -->
+        <div class="accordion-item" data-tags="SpringBoot React TypeScript MySQL Redis JWT OAuth AWS Docker Fullstack TeamProject KakaoMap TossPayments">
+          <div class="accordion-header">
+            <div class="accordion-title">
+              <img src="img/wherewego-project.jpg" alt="Where We Go 여행 코스 공유 플랫폼" class="accordion-icon">
+              <div class="title-content">
+                <h3>Where We Go - 여행 코스 공유 플랫폼 <span class="project-date">(2025.07-2025.08)</span></h3>
+                <p>Google Places API와 결제 시스템을 포함한 완전한 풀스택 여행 플랫폼</p>
+                <div class="project-tech">
+                  <span>Spring Boot</span>
+                  <span>MySQL</span>
+                  <span>Redis</span>
+                  <span>JWT</span>
+                  <span>AWS</span>
+                </div>
+              </div>
+            </div>
+            <button class="accordion-toggle" aria-label="Toggle details">
+              <span class="toggle-icon"></span>
+            </button>
+          </div>
+          <div class="accordion-content">
+            <div class="project-card">
+              <div class="project-content">
+                <div class="project-meta">
+                  <div>
+                    <p><strong>⏱️ 기간:</strong> 2025.07.16 - 2025.08.26</p>
+                    <p><strong>👥 역할:</strong> 백엔드 — Place 도메인, Payments 환불, 배포/이미지 업로드(S3)</p>
+                    <p><strong>💻 기술:</strong> Java 17, Spring Boot 3.x, JPA, MySQL, Redis, Spring Security, JWT, OAuth2, AWS(ECS/Fargate, RDS, S3), GitHub Actions</p>
+                  </div>
+                </div>
+
+
+                <div class="project-features">
+                  <h4>내가 맡은 영역</h4>
+                  <ul>
+                    <li>Place 도메인: Google Places 응답 → 내부 Place 변환/저장, 장소 검색/상세, 북마크·리뷰·평점 API</li>
+                    <li>Payments 환불: 환불 승인/콜백 검증, 상태 전이(REQUESTED→APPROVED/REJECTED) 및 금액/서명 검증</li>
+                    <li>배포: GitHub Actions → ECR/ECS(Fargate) 자동 배포, ALB 헬스체크/롤백 기준 구성</li>
+                    <li>S3 이미지 업로드: 버킷/폴더 구조 설계, 업로드 API와 URL 관리, 최소 권한 정책(least privilege)</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>문제 해결</h4>
+                  <ul>
+                    <li>Places API 비용/쿼터: Redis 캐시 TTL/키 전략, 리뷰/북마크 변경 시 정확한 캐시 무효화</li>
+                    <li>환불 중복 콜백: 주문별 idempotency 키와 상태 전이 규칙으로 중복 처리 방지, 금액/서명 검증</li>
+                    <li>S3 업로드 안정성: Content-Type/확장자 검증과 퍼블릭 접근 제어로 잘못된 파일/권한 노출 방지</li>
+                    <li>배포 신뢰성: ALB 헬스체크 실패 시 자동 롤백, 단계적 배포로 무중단 전환</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>아키텍처 특징</h4>
+                  <ul>
+                    <li>DDD 기반 도메인 설계: auth, courses, places, payment, eventproduct, order, user</li>
+                    <li>Security Multiple FilterChain: 공개/인증 API 분리, JwtFilter 적용 범위 최소화</li>
+                    <li>Redis 캐싱: 외부 API 응답/목록 캐싱으로 비용/응답속도 최적화</li>
+                    <li>AWS 배포: ALB → ECS Fargate(Spring Boot+Redis) → RDS(MySQL), S3 이미지 저장, Parameter Store</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>백엔드 API 설계</h4>
+                  <ul>
+                    <li>RESTful 설계 원칙 적용: 도메인별 버전 경로, 표준 응답 포맷, 에러 코드 일원화</li>
+                    <li>페이지네이션/정렬/필터링 공통 파라미터 적용</li>
+                    <li>DTO/Projection 기반 조회로 N+1 방지 및 응답 축소</li>
+                    <li>토큰 블랙리스트 기반 로그아웃, Refresh 토큰 회전 전략</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>결제/환불 플로우</h4>
+                  <ul>
+                    <li>주문 생성(PENDING) → 결제 승인(CALLBACK 검증) → 확정(CONFIRMED) / 환불(CANCELLED)</li>
+                    <li>서명/금액 검증과 중복 콜백 대비 Idempotent 처리</li>
+                    <li>결제 실패/타임아웃 시 재시도 가이드와 안전한 롤백</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>데이터 모델링 및 무결성</h4>
+                  <ul>
+                    <li>복합 유니크 키: (user_id, course_id), (user_id, place_id)로 중복 액션 방지</li>
+                    <li>외래키/상태 전이 규칙으로 일관성 보장, 트랜잭션 경계 최소화</li>
+                    <li>비관적 락(PESSIMISTIC_WRITE) 및 카운터 정합성 확보 로직</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>캐싱 및 성능</h4>
+                  <ul>
+                    <li>Redis 캐시 TTL/Key 전략 수립, 데이터 변경 시 정확한 캐시 무효화</li>
+                    <li>인기 코스/장소 랭킹 등 읽기 빈도 높은 API 캐싱</li>
+                    <li>쿼리 튜닝 및 인덱스 최적화, BatchSize 설정으로 N+1 최소화</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>테스트 & 품질</h4>
+                  <ul>
+                    <li>JUnit5/Mockito 단위 테스트 및 MockMvc 슬라이스 테스트</li>
+                    <li>동시성 시나리오 테스트로 좋아요/북마크 정합성 검증</li>
+                    <li>API 계약 테스트로 스펙 변경 시 회귀 방지</li>
+                  </ul>
+                </div>
+
+                <div class="project-features">
+                  <h4>CI/CD & 운영</h4>
+                  <ul>
+                    <li>(본인 구축) GitHub Actions: 빌드/테스트→Docker 이미지→ECR/ECS 배포 파이프라인</li>
+                    <li>Parameter Store로 민감정보 관리, ALB 헬스체크/롤백 기준 정의</li>
+                    <li>CloudWatch 로그/메트릭 기반 이슈 트레이싱</li>
+                  </ul>
+                </div>
+
+                <a href="https://github.com/two2gether/where-we-go" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> GitHub Repository
+                </a>
+                <a href="http://wherewego-prod-frontend.s3-website.ap-northeast-2.amazonaws.com" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Project 9: OuterPark - Redis 분산 락 기반 콘서트 예약 시스템 (팀 프로젝트) -->
         <div class="accordion-item" data-tags="SpringBoot Redis 분산락 JWT MySQL TeamProject Backend AOP 동시성제어">
           <div class="accordion-header">
@@ -1073,12 +1206,91 @@
     </div>
   </footer>
 
+  <!-- README Modal -->
+  <div id="readme-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="readme-modal-title" tabindex="-1">
+      <div class="modal-header">
+        <h2 id="readme-modal-title">My Contributions (README)</h2>
+        <button type="button" class="modal-close" id="readme-close" aria-label="Close README">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <section class="readme-section">
+          <h3>이 문서는?</h3>
+          <p>팀/개인 프로젝트에서 제가 맡았던 역할과 문제 해결 내용을 정리한 개인 README입니다. 깃허브 팀 README와 별도로, 제 기여 관점에서 핵심 포인트만 빠르게 확인할 수 있도록 구성했습니다.</p>
+        </section>
+
+        <section class="readme-section">
+          <h3>Where We Go — 여행 코스 공유 플랫폼 (팀)</h3>
+          <ul>
+            <li>Place 도메인: Google Places 응답 → 내부 Place 변환/저장, 장소 검색/상세, 북마크·리뷰·평점 API 설계/구현</li>
+            <li>Payments 환불: 환불 승인/콜백 검증, 상태 전이(REQUESTED→APPROVED/REJECTED) 및 금액/서명 검증 로직</li>
+            <li>배포: GitHub Actions → ECR/ECS(Fargate) 자동 배포, ALB 헬스체크/롤백 기준 구성</li>
+            <li>S3 이미지 업로드: 버킷/폴더 구조, 업로드 API, 최소 권한 정책(least privilege) 적용</li>
+          </ul>
+          <p>
+            <a href="https://github.com/two2gether/where-we-go" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+          </p>
+        </section>
+
+        <section class="readme-section">
+          <h3>OuterPark — 콘서트 예약 시스템 (팀)</h3>
+          <ul>
+            <li>개인 담당(Seat): 좌석 자연순 정렬, Pessimistic Lock 기반 다중 좌석 동시성 제어, DTO Projection 최적화</li>
+            <li>좌석 상태 전이(PENDING/CONFIRMED/CANCELLED) 및 유효성 검증 로직</li>
+            <li>팀 협업: AOP + Redis 분산 락 설계 참여, Lua 스크립트 기반 원자적 락/해제, 데드락 방지 순서 보장</li>
+          </ul>
+          <p>
+            <a href="https://github.com/DOGYUN0903/outerpark" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+          </p>
+        </section>
+
+        <section class="readme-section">
+          <h3>Picflow — 소셜 미디어 백엔드 API (개인)</h3>
+          <ul>
+            <li>JWT 인증/인가 전반, 표준화된 REST API, 파일 업로드 및 예외 처리 체계</li>
+            <li>연관관계 매핑(User-Post-Comment-Like-Follow)와 DTO/문서화</li>
+            <li>Global Exception, ApiResponse<T>, 보안/필터 체인 구성</li>
+          </ul>
+          <p>
+            <a href="https://github.com/balsohn/picflow" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+          </p>
+        </section>
+
+        <section class="readme-section">
+          <h3>newsFeed — SNS 백엔드 플랫폼 (팀)</h3>
+          <ul>
+            <li>JWT 기반 회원가입/로그인, 게시물/댓글 CRUD, 좋아요 중복 방지, 팔로우/검색</li>
+            <li>DTO 패턴과 PagedResponse로 순환 참조/페이징 이슈 해결</li>
+            <li>공통 예외 처리와 응답 포맷 정립으로 팀 내 API 일관성 강화</li>
+          </ul>
+          <p>
+            <a href="https://github.com/balsohn/newsFeed" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Repository</a>
+          </p>
+        </section>
+
+        <section class="readme-section">
+          <h3>연락처</h3>
+          <p>
+            <a href="mailto:balsohn@gmail.com"><i class="fas fa-envelope"></i> balsohn@gmail.com</a>
+            ·
+            <a href="https://github.com/balsohn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+            ·
+            <a href="https://velog.io/@balsohn" target="_blank" rel="noopener noreferrer"><i class="fas fa-blog"></i> Velog</a>
+          </p>
+          <p style="color:var(--gray); font-size:0.9rem;">Last updated: 2025-08-24</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript -->
   <script src="js/navi.js"></script>
   <script src="js/scrollspy.js"></script>
   <script src="js/typing-effect.js"></script>
   <script src="js/projects.js"></script>
-  <script src="js/blog.js"></script>
+  <script src="js/modal-readme.js"></script>
   <script src="js/main.js"></script>
 </body>
 

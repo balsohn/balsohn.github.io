@@ -10,4 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
   TypingEffect.init();
   Projects.init();
   Blog.fetchPosts();
+  if (window.ReadmeModal && typeof ReadmeModal.init === 'function') {
+    ReadmeModal.init();
+  }
 });
